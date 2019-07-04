@@ -14,10 +14,8 @@ namespace GearShopV2.Controllers
         {
             return View();
         }
-        public IActionResult Jersey()
-        {
-            return View();
-        }
+
+
 
         public IActionResult Privacy()
         {
