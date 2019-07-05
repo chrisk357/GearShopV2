@@ -1,0 +1,61 @@
+﻿@model GearShopV2.Models.Pant
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Pant</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="PBrand" class="control-label"></label>
+                <input asp-for="PBrand" class="form-control" />
+                <span asp-validation-for="PBrand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PModel" class="control-label"></label>
+                <input asp-for="PModel" class="form-control" />
+                <span asp-validation-for="PModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PColor" class="control-label"></label>
+                <input asp-for="PColor" class="form-control" />
+                <span asp-validation-for="PColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PSize" class="control-label"></label>
+                <input asp-for="PSize" class="form-control" />
+                <span asp-validation-for="PSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PPrice" class="control-label"></label>
+                <input asp-for="PPrice" class="form-control" />
+                <span asp-validation-for="PPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PSalePrice" class="control-label"></label>
+                <input asp-for="PSalePrice" class="form-control" />
+                <span asp-validation-for="PSalePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PQtyOnHand" class="control-label"></label>
+                <input asp-for="PQtyOnHand" class="form-control" />
+                <span asp-validation-for="PQtyOnHand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

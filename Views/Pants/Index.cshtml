@@ -1,0 +1,71 @@
+﻿@model IEnumerable<GearShopV2.Models.Pant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PSalePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PQtyOnHand)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PBrand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PSalePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PQtyOnHand)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

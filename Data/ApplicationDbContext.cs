@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using GearShopV2.Models;
 
 namespace GearShopV2.Data
 {
@@ -12,5 +13,7 @@ namespace GearShopV2.Data
             : base(options)
         {
         }
+        public DbSet<GearShopV2.Models.Jersey> Jersey { get; set; }
+        public DbSet<GearShopV2.Models.Pant> Pant { get; set; }
     }
 }

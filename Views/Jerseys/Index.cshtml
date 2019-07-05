@@ -1,0 +1,71 @@
+﻿@model IEnumerable<GearShopV2.Models.Jersey>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JSalePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JQtyOnHand)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JBrand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSalePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JQtyOnHand)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
