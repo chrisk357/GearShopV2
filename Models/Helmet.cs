@@ -20,6 +20,7 @@ namespace GearShopV2.Models
         [Required]
         public double HPrice { get; set; }
         public double HSalePrice { get; set; }
+        [Required]
         public int HQtyOnHand { get; set; }
 
     }
