@@ -22,6 +22,7 @@ namespace GearShopV2.Models
         public double HSalePrice { get; set; }
         [Required]
         public int HQtyOnHand { get; set; }
+        public string HImageUrl { get; set; }
 
     }
 }

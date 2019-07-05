@@ -10,22 +10,22 @@ using GearShopV2.Models;
 
 namespace GearShopV2.Controllers
 {
-    public class JerseysController : Controller
+    public class HelmetsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public JerseysController(ApplicationDbContext context)
+        public HelmetsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Jerseys
+        // GET: Helmets
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Jersey.ToListAsync());
+            return View(await _context.Helmet.ToListAsync());
         }
 
-        // GET: Jerseys/Details/5
+        // GET: Helmets/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace GearShopV2.Controllers
                 return NotFound();
             }
 
-            var jersey = await _context.Jersey
+            var helmet = await _context.Helmet
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (jersey == null)
+            if (helmet == null)
             {
                 return NotFound();
             }
 
-            return View(jersey);
+            return View(helmet);
         }
 
-        // GET: Jerseys/Create
+        // GET: Helmets/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Jerseys/Create
+        // POST: Helmets/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,JBrand,JModel,JColor,JSize,JPrice,JSalePrice,JQtyOnHand,JImageUrl")] Jersey jersey)
+        public async Task<IActionResult> Create([Bind("Id,HBrand,HModel,HColor,HSize,HPrice,HSalePrice,HQtyOnHand,HImageUrl")] Helmet helmet)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(jersey);
+                _context.Add(helmet);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(jersey);
+            return View(helmet);
         }
 
-        // GET: Jerseys/Edit/5
+        // GET: Helmets/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace GearShopV2.Controllers
                 return NotFound();
             }
 
-            var jersey = await _context.Jersey.FindAsync(id);
-            if (jersey == null)
+            var helmet = await _context.Helmet.FindAsync(id);
+            if (helmet == null)
             {
                 return NotFound();
             }
-            return View(jersey);
+            return View(helmet);
         }
 
-        // POST: Jerseys/Edit/5
+        // POST: Helmets/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,JBrand,JModel,JColor,JSize,JPrice,JSalePrice,JQtyOnHand,JImageUrl")] Jersey jersey)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,HBrand,HModel,HColor,HSize,HPrice,HSalePrice,HQtyOnHand,HImageUrl")] Helmet helmet)
         {
-            if (id != jersey.Id)
+            if (id != helmet.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace GearShopV2.Controllers
             {
                 try
                 {
-                    _context.Update(jersey);
+                    _context.Update(helmet);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!JerseyExists(jersey.Id))
+                    if (!HelmetExists(helmet.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace GearShopV2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(jersey);
+            return View(helmet);
         }
 
-        // GET: Jerseys/Delete/5
+        // GET: Helmets/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace GearShopV2.Controllers
                 return NotFound();
             }
 
-            var jersey = await _context.Jersey
+            var helmet = await _context.Helmet
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (jersey == null)
+            if (helmet == null)
             {
                 return NotFound();
             }
 
-            return View(jersey);
+            return View(helmet);
         }
 
-        // POST: Jerseys/Delete/5
+        // POST: Helmets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var jersey = await _context.Jersey.FindAsync(id);
-            _context.Jersey.Remove(jersey);
+            var helmet = await _context.Helmet.FindAsync(id);
+            _context.Helmet.Remove(helmet);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool JerseyExists(int id)
+        private bool HelmetExists(int id)
         {
-            return _context.Jersey.Any(e => e.Id == id);
+            return _context.Helmet.Any(e => e.Id == id);
         }
     }
 }

@@ -54,7 +54,7 @@ namespace GearShopV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,PBrand,PModel,PColor,PSize,PPrice,PSalePrice,PQtyOnHand")] Pant pant)
+        public async Task<IActionResult> Create([Bind("Id,PBrand,PModel,PColor,PSize,PPrice,PSalePrice,PQtyOnHand,PImageUrl")] Pant pant)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace GearShopV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PBrand,PModel,PColor,PSize,PPrice,PSalePrice,PQtyOnHand")] Pant pant)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,PBrand,PModel,PColor,PSize,PPrice,PSalePrice,PQtyOnHand,PImageUrl")] Pant pant)
         {
             if (id != pant.Id)
             {

@@ -1,0 +1,68 @@
+﻿@model GearShopV2.Models.Helmet
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Helmet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HBrand" class="control-label"></label>
+                <input asp-for="HBrand" class="form-control" />
+                <span asp-validation-for="HBrand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HModel" class="control-label"></label>
+                <input asp-for="HModel" class="form-control" />
+                <span asp-validation-for="HModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HColor" class="control-label"></label>
+                <input asp-for="HColor" class="form-control" />
+                <span asp-validation-for="HColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HSize" class="control-label"></label>
+                <input asp-for="HSize" class="form-control" />
+                <span asp-validation-for="HSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HPrice" class="control-label"></label>
+                <input asp-for="HPrice" class="form-control" />
+                <span asp-validation-for="HPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HSalePrice" class="control-label"></label>
+                <input asp-for="HSalePrice" class="form-control" />
+                <span asp-validation-for="HSalePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HQtyOnHand" class="control-label"></label>
+                <input asp-for="HQtyOnHand" class="form-control" />
+                <span asp-validation-for="HQtyOnHand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HImageUrl" class="control-label"></label>
+                <input asp-for="HImageUrl" class="form-control" />
+                <span asp-validation-for="HImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

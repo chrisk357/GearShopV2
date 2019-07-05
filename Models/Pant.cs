@@ -21,5 +21,7 @@ namespace GearShopV2.Models
         public double PSalePrice { get; set; }
         [Required]
         public int PQtyOnHand { get; set; }
+        public string PImageUrl { get; set; }
+
     }
 }

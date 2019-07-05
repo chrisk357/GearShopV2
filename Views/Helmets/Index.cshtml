@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GearShopV2.Models.Pant>
+﻿@model IEnumerable<GearShopV2.Models.Helmet>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,28 +13,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PBrand)
+                @Html.DisplayNameFor(model => model.HBrand)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PModel)
+                @Html.DisplayNameFor(model => model.HModel)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PColor)
+                @Html.DisplayNameFor(model => model.HColor)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PSize)
+                @Html.DisplayNameFor(model => model.HSize)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PPrice)
+                @Html.DisplayNameFor(model => model.HPrice)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PSalePrice)
+                @Html.DisplayNameFor(model => model.HSalePrice)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PQtyOnHand)
+                @Html.DisplayNameFor(model => model.HQtyOnHand)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PImageUrl)
+                @Html.DisplayNameFor(model => model.HImageUrl)
             </th>
             <th></th>
         </tr>
@@ -43,28 +43,28 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.PBrand)
+                @Html.DisplayFor(modelItem => item.HBrand)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PModel)
+                @Html.DisplayFor(modelItem => item.HModel)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PColor)
+                @Html.DisplayFor(modelItem => item.HColor)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PSize)
+                @Html.DisplayFor(modelItem => item.HSize)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PPrice)
+                @Html.DisplayFor(modelItem => item.HPrice)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PSalePrice)
+                @Html.DisplayFor(modelItem => item.HSalePrice)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PQtyOnHand)
+                @Html.DisplayFor(modelItem => item.HQtyOnHand)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PImageUrl)
+                @Html.DisplayFor(modelItem => item.HImageUrl)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
