@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using GearShopV2;
 using GearShopV2.Data;
 using GearShopV2.Models;
+using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -32,7 +34,7 @@ namespace GearShopV2
                 }
                 catch (Exception ex)
                 {
-                    var logger = services.GetRequiredService(ILogger<Program>>());
+                    var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An errror occured seeding the DB.");
                 }
             }
