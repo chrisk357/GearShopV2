@@ -18,9 +18,9 @@ namespace GearShopV2.Models
         public string PColor { get; set; }
         [Required, Display(Name = "Size")]
         public string PSize { get; set; }
-        [Required, Display(Name = "Price"), Column(TypeName = "decimal(18, 2)")]
+        [Required, Display(Name = "Price")]
         public double PPrice { get; set; }
-        [Display(Name = "Sale Price"), Column(TypeName = "decimal(18, 2)")]
+        [Display(Name = "Sale Price")]
         public double PSalePrice { get; set; }
         [Required]
         public int PQtyOnHand { get; set; }

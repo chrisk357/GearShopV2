@@ -20,9 +20,17 @@ namespace GearShopV2.Controllers
         }
 
         // GET: Helmets
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Helmet.ToListAsync());
+            var helmets = from h in _context.Helmet
+                          select h;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                helmets = helmets.Where(s => s.HBrand.Contains(searchString));
+            }
+
+            return View(await helmets.ToListAsync());
         }
 
         // GET: Helmets/Details/5
