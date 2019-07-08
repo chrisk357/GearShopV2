@@ -9,18 +9,21 @@ namespace GearShopV2.Models
     public class Pant
     {
         public int Id { get; set; }
-        [Required]
+        [Required, Display(Name = "Brand")]
         public string PBrand { get; set; }
-        [Required]
+        [Required, Display(Name = "Model")]
         public string PModel { get; set; }
+        [Display(Name = "Color")]
         public string PColor { get; set; }
-        [Required]
+        [Required, Display(Name = "Size")]
         public string PSize { get; set; }
-        [Required]
+        [Required, Display(Name = "Price")]
         public double PPrice { get; set; }
+        [Display(Name = "Sale Price")]
         public double PSalePrice { get; set; }
         [Required]
         public int PQtyOnHand { get; set; }
+        [Display(Name = "Image")]
         public string PImageUrl { get; set; }
 
     }
