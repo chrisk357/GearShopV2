@@ -20,9 +20,16 @@ namespace GearShopV2.Controllers
         }
 
         // GET: Pants
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Pant.ToListAsync());
+            var pants = from p in _context.Pant
+                        select p;
+            if ( !String.IsNullOrEmpty(searchString))
+            {
+                pants = pants.Where(s => s.PBrand.Contains(searchString));
+            }
+
+            return View(await pants.ToListAsync());
         }
 
         // GET: Pants/Details/5
