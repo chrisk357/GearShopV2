@@ -20,14 +20,25 @@ namespace GearShopV2.Controllers
         }
 
         // GET: Jerseys
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string gearColor, string searchString)
+
         {
+            //Use LINQ to get a list of all colors
+            IQueryable<string> colorQuery = from j in _context.Jersey
+                                            orderby j.JColor
+                                            select j.JColor;
+
             var jerseys = from j in _context.Jersey
                           select j;
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 jerseys = jerseys.Where(s => s.JBrand.Contains(searchString));
+            }
+
+            if (!string.IsNullOrEmpty(gearColor))
+            {
+                jerseys = jerseys.Where(x => x.JColor == gearColor)
             }
 
             return View(await jerseys.ToListAsync());
