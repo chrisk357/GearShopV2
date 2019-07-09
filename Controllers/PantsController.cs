@@ -32,6 +32,13 @@ namespace GearShopV2.Controllers
             return View(await pants.ToListAsync());
         }
 
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
+        }
+
+
         // GET: Pants/Details/5
         public async Task<IActionResult> Details(int? id)
         {

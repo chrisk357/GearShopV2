@@ -33,6 +33,14 @@ namespace GearShopV2.Controllers
             return View(await jerseys.ToListAsync());
         }
 
+
+        [HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
+        }
+
+
         // GET: Jerseys/Details/5
         public async Task<IActionResult> Details(int? id)
         {
