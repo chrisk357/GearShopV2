@@ -69,7 +69,7 @@ namespace GearShopV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,HBrand,HModel,HColor,HSize,HPrice,HSalePrice,HQtyOnHand,HImageUrl")] Helmet helmet)
+        public async Task<IActionResult> Create([Bind("Id,HBrand,HModel,HColor,HSize,HPrice,HSalePrice,HQtyOnHand,HImageUrl,HSizeCat")] Helmet helmet)
         {
             if (ModelState.IsValid)
             {
@@ -101,7 +101,7 @@ namespace GearShopV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,HBrand,HModel,HColor,HSize,HPrice,HSalePrice,HQtyOnHand,HImageUrl")] Helmet helmet)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,HBrand,HModel,HColor,HSize,HPrice,HSalePrice,HQtyOnHand,HImageUrl,HSizeCat")] Helmet helmet)
         {
             if (id != helmet.Id)
             {

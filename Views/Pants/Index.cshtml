@@ -45,6 +45,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PImageUrl)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.PSizeCat)
             </th>
             <th></th>
         </tr>
@@ -75,6 +78,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PImageUrl)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.PSizeCat)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

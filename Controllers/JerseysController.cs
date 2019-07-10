@@ -38,7 +38,7 @@ namespace GearShopV2.Controllers
 
             if (!string.IsNullOrEmpty(gearColor))
             {
-                jerseys = jerseys.Where(x => x.JColor == gearColor)
+                jerseys = jerseys.Where(x => x.JColor == gearColor);
             }
 
             return View(await jerseys.ToListAsync());
@@ -81,7 +81,7 @@ namespace GearShopV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,JBrand,JModel,JColor,JSize,JPrice,JSalePrice,JQtyOnHand,JImageUrl")] Jersey jersey)
+        public async Task<IActionResult> Create([Bind("Id,JBrand,JModel,JColor,JSize,JPrice,JSalePrice,JQtyOnHand,JImageUrl,JSizeCat")] Jersey jersey)
         {
             if (ModelState.IsValid)
             {
@@ -113,7 +113,7 @@ namespace GearShopV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,JBrand,JModel,JColor,JSize,JPrice,JSalePrice,JQtyOnHand,JImageUrl")] Jersey jersey)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,JBrand,JModel,JColor,JSize,JPrice,JSalePrice,JQtyOnHand,JImageUrl,JSizeCat")] Jersey jersey)
         {
             if (id != jersey.Id)
             {
