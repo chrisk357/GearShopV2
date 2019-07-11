@@ -1,14 +1,15 @@
-﻿@model  GearShopV2.Models.GearSizeViewModel
+﻿@model GearShopV2.Models.GearSizeViewModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Closeout Helmets</h1>
-
+<h1 class="text-center">Closeout Helmets</h1>
+<!--
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+    -->
 
 <form asp-controller="Helmets" asp-action="Index" method="get">
     <p>
@@ -21,16 +22,17 @@
     </p>
 </form>
 
-
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Helmets[0].HBrand)
             </th>
+            <!--
             <th>
                 @Html.DisplayNameFor(model => model.Helmets[0].HModel)
             </th>
+             -->
             <th>
                 @Html.DisplayNameFor(model => model.Helmets[0].HColor)
             </th>
@@ -43,12 +45,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Helmets[0].HSalePrice)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Helmets[0].HQtyOnHand)
-            </th>
+            <!--
+                <th>
+                    @Html.DisplayNameFor(model => model.Helmets[0].HQtyOnHand)
+                </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Helmets[0].HImageUrl)
             </th>
+            -->
             <th>
                 @Html.DisplayNameFor(model => model.Helmets[0].SizeCat)
             </th>
@@ -58,40 +63,53 @@
     <tbody>
         @foreach (var item in Model.Helmets)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HBrand)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HModel)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HColor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HSize)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HPrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HSalePrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HQtyOnHand)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HImageUrl)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SizeCat)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HBrand) -
+                @Html.DisplayFor(modelItem => item.HModel)
+            </td>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.HColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HSize)
+            </td>
+
+            <td>
+                $@Html.DisplayFor(modelItem => item.HPrice)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.HSalePrice)
+            </td>
+            <!--
+    <td>
+        @Html.DisplayFor(modelItem => item.HQtyOnHand)
+    </td>
+    -->
+
+            <td>
+                @Html.DisplayFor(modelItem => item.SizeCat)
+            </td>
+
+
+
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.HImageUrl)" class="img-thumbnail" alt="ERROR"></a>
+            </td>
+
+
+
+            <!--
+    <td>
+
+           <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+           <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+           <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+    </td>
+    -->
+        </tr>
         }
     </tbody>
 </table>
