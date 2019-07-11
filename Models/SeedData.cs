@@ -32,7 +32,7 @@ namespace GearShopV2.Models
                         JSalePrice = 14.99,
                         JQtyOnHand = 14,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/msr_19_jer_nxt-blu_red.jpg",
-                        JSizeCat = "Youth",
+                        SizeCat = "Youth",
                     },
                     new Jersey
                     {
@@ -44,7 +44,7 @@ namespace GearShopV2.Models
                         JSalePrice = 14.99,
                         JQtyOnHand = 10,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/msr_19_jer_nxt-red_blk.jpg",
-                        JSizeCat = "Adult",
+                        SizeCat = "Adult",
                     },
                     new Jersey
                     {
@@ -56,7 +56,7 @@ namespace GearShopV2.Models
                         JSalePrice = 17.95,
                         JQtyOnHand = 7,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/msr_19_jer_axx_19_5-blu_yel.jpg",
-                        JSizeCat = "Adult",
+                        SizeCat = "Adult",
                     },
                     new Jersey
                     {
@@ -68,7 +68,7 @@ namespace GearShopV2.Models
                         JSalePrice = 17.95,
                         JQtyOnHand = 17,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/msr_19_jer_axx_19_5-blk_flo_grn.jpg",
-                        JSizeCat = "Adult",
+                        SizeCat = "Adult",
                     },                    
                     new Jersey
                     {
@@ -80,7 +80,7 @@ namespace GearShopV2.Models
                         JSalePrice = 22.95,
                         JQtyOnHand = 9,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/moo_19_jer_qua-red_wht_blu.jpg",
-                        JSizeCat = "Youth",
+                        SizeCat = "Youth",
                     },
                     new Jersey
                     {
@@ -92,7 +92,7 @@ namespace GearShopV2.Models
                         JSalePrice = 21.99,
                         JQtyOnHand = 8,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_19_jer_f16-neo_pnk_blk_gry.jpg",
-                        JSizeCat = "Youth",
+                        SizeCat = "Youth",
                     });
 
 
@@ -113,7 +113,7 @@ namespace GearShopV2.Models
                         PSalePrice = 65.99,
                         PQtyOnHand = 10,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/msr_19_pan_nxt-blu_red.jpg",
-                        PSizeCat = "Adult",
+                        SizeCat = "Adult",
                     },
                     new Pant
                     {
@@ -125,7 +125,7 @@ namespace GearShopV2.Models
                         PSalePrice = 63.99,
                         PQtyOnHand = 8,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_19_pan_f16-blu_blk_hi_vis.jpg",
-                        PSizeCat = "Adult",
+                        SizeCat = "Adult",
                     },                    
                     new Pant
                     {
@@ -137,7 +137,7 @@ namespace GearShopV2.Models
                         PSalePrice = 59.99,
                         PQtyOnHand = 14,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/o/one_19_pan_ele-blu.jpg",
-                        PSizeCat = "Youth",
+                        SizeCat = "Youth",
                     },                    
                     new Pant
                     {
@@ -149,7 +149,7 @@ namespace GearShopV2.Models
                         PSalePrice = 50.95,
                         PQtyOnHand = 7,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tho_19_pan_sec_she-lig_gry_red.jpg",
-                        PSizeCat = "Adult",
+                        SizeCat = "Adult",
                     },                        
                     new Pant
                     {
@@ -161,7 +161,7 @@ namespace GearShopV2.Models
                         PSalePrice = 59.95,
                         PQtyOnHand = 12,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/moo_19_pan_qua-tea_hi_viz.jpg",
-                        PSizeCat = "Youth",
+                        SizeCat = "Youth",
                     },                    
                     new Pant
                     {
@@ -173,7 +173,7 @@ namespace GearShopV2.Models
                         PSalePrice = 65.99,
                         PQtyOnHand = 6,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_18_pan_kin_era-blk_wht.jpg",
-                        PSizeCat = "Youth",
+                        SizeCat = "Youth",
                     });
 
                 if (context.Helmet.Any())
@@ -191,7 +191,7 @@ namespace GearShopV2.Models
                     HSalePrice = 99.00,
                     HQtyOnHand = 10,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/msr_19_hel_mav4-red_blu_wht.jpg",
-                    HSizeCat = "Youth",
+                    SizeCat = "Youth",
                 },
                 new Helmet
                 {
@@ -203,7 +203,7 @@ namespace GearShopV2.Models
                     HSalePrice = 135.96,
                     HQtyOnHand = 7,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/b/bell_19_hel_mx_9_mips-tag_asy_blu_pnk.jpg",
-                    HSizeCat = "Adult",
+                    SizeCat = "Adult",
                 },
                 new Helmet
                 {
@@ -215,7 +215,7 @@ namespace GearShopV2.Models
                     HSalePrice = 135.96,
                     HQtyOnHand = 9,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/b/bell_19_hel_mx_9_mips-tag_asy_blu_pnk.jpg",
-                    HSizeCat = "Youth",
+                    SizeCat = "Youth",
                 },
                 new Helmet
                 {
@@ -227,7 +227,7 @@ namespace GearShopV2.Models
                     HSalePrice = 114.95,
                     HQtyOnHand = 16,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_18_hel_tox_mips_res-blk_neo_pnk.jpg",
-                    HSizeCat = "Adult",
+                    SizeCat = "Adult",
                 },
                 new Helmet
                 {
@@ -239,7 +239,7 @@ namespace GearShopV2.Models
                     HSalePrice = 114.95,
                     HQtyOnHand = 12,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_18_hel_tox_mips_res-whi_yel_blu.jpg",
-                    HSizeCat = "Youth",
+                    SizeCat = "Youth",
                 },
                 new Helmet
                 {
@@ -251,7 +251,7 @@ namespace GearShopV2.Models
                     HSalePrice = 101.75,
                     HQtyOnHand = 5,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/a/ans_18_hel_ar5_mips-aci_blu.jpg",
-                    HSizeCat = "Adult",
+                    SizeCat = "Adult",
                 },                
                 new Helmet
                 {
@@ -263,7 +263,7 @@ namespace GearShopV2.Models
                     HSalePrice = 83.95,
                     HQtyOnHand = 13,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tho_19_hel_sec_hyp-gry_pnk.jpg",
-                    HSizeCat = "Adult",
+                    SizeCat = "Adult",
                 },
                 new Helmet
                 {
@@ -275,7 +275,7 @@ namespace GearShopV2.Models
                     HSalePrice = 101.97,
                     HQtyOnHand = 14,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_18_hel_v1_rac-red.jpg",
-                    HSizeCat = "Youth",
+                    SizeCat = "Youth",
                 });
 
             context.SaveChanges();
