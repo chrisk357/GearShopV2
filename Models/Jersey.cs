@@ -26,6 +26,7 @@ namespace GearShopV2.Models
         public int JQtyOnHand { get; set; }
         [Display(Name = "Image")]
         public string JImageUrl { get; set; }
+        [Display(Name = "Category")]
         public string SizeCat { get; set; }
     }
 }

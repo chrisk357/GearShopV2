@@ -29,6 +29,7 @@ namespace GearShopV2.Models
         public int HQtyOnHand { get; set; }
         [Display(Name = "Image")]
         public string HImageUrl { get; set; }
+        [Display(Name ="Category")]
         public string SizeCat { get; set; }
 
     }
