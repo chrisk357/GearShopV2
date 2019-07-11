@@ -81,6 +81,54 @@ namespace GearShopV2.Models
                         JQtyOnHand = 9,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/moo_19_jer_qua-red_wht_blu.jpg",
                         SizeCat = "Youth",
+                    },                    
+                    new Jersey
+                    {
+                        JBrand = "Answer",
+                        JModel = "Syncron Drift Jersey",
+                        JColor = "Hyper Acid/Black",
+                        JSize = "L",
+                        JPrice = 25.95,
+                        JSalePrice = 16.99,
+                        JQtyOnHand = 11,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/a/ans_19_jer_syn_dri-hyp_aci_blk.jpg",
+                        SizeCat = "Youth",
+                    },                    
+                    new Jersey
+                    {
+                        JBrand = "Shift",
+                        JModel = "Whit3 Muse Jersey",
+                        JColor = "Blue",
+                        JSize = "S",
+                        JPrice = 22.46,
+                        JSalePrice = 22.46,
+                        JQtyOnHand = 8,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/s/shi_19_jer_whi_mus-blu.jpg",
+                        SizeCat = "Youth",
+                    },                    
+                    new Jersey
+                    {
+                        JBrand = "O'Neal",
+                        JModel = "Element Afterburner Jersey",
+                        JColor = "Blue/Red",
+                        JSize = "S",
+                        JPrice = 24.99,
+                        JSalePrice = 18.74,
+                        JQtyOnHand = 13,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/o/one_16_jer_ele_aft-blu_red.jpg",
+                        SizeCat = "Adult",
+                    },                    
+                    new Jersey
+                    {
+                        JBrand = "Fly",
+                        JModel = "Evolution 2.0",
+                        JColor = "Navy/Yellow",
+                        JSize = "M",
+                        JPrice = 30.99,
+                        JSalePrice = 30.99,
+                        JQtyOnHand = 13,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_18_jer_evo_2-nvy_yel.jpg",
+                        SizeCat = "Adult",
                     },
                     new Jersey
                     {
@@ -150,6 +198,54 @@ namespace GearShopV2.Models
                         PQtyOnHand = 7,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tho_19_pan_sec_she-lig_gry_red.jpg",
                         SizeCat = "Adult",
+                    },                     
+                    new Pant
+                    {
+                        PBrand = "Shift",
+                        PModel = "Whit3 Muse Pant",
+                        PColor = "Purple",
+                        PSize = "34",
+                        PPrice = 79.99,
+                        PSalePrice = 59.96,
+                        PQtyOnHand = 19,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/s/shi_19_pan_whi_mus-pur.jpg",
+                        SizeCat = "Adult",
+                    },                        
+                    new Pant
+                    {
+                        PBrand = "Answer",
+                        PModel = "Syncron Pant",
+                        PColor = "Cyan/Navy",
+                        PSize = "36",
+                        PPrice = 54.99,
+                        PSalePrice = 54.99,
+                        PQtyOnHand = 9,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/a/ans_18_pan_syn-cya_nvy.jpg",
+                        SizeCat = "Adult",
+                    },                     
+                    new Pant
+                    {
+                        PBrand = "Troy Lee",
+                        PModel = "GP Jet Pant",
+                        PColor = "Yellow/Navy",
+                        PSize = "26",
+                        PPrice = 109.00,
+                        PSalePrice = 87.20,
+                        PQtyOnHand = 10,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tld_19_pan_gp_jet-red_yel.jpg",
+                        SizeCat = "Youth",
+                    },                     
+                    new Pant
+                    {
+                        PBrand = "Troy Lee",
+                        PModel = "GP Jet Pant",
+                        PColor = "Blue",
+                        PSize = "28",
+                        PPrice = 109.00,
+                        PSalePrice = 87.20,
+                        PQtyOnHand = 13,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tld_19_pan_gp_jet-blu.jpg",
+                        SizeCat = "Youth",
                     },                        
                     new Pant
                     {
@@ -166,7 +262,7 @@ namespace GearShopV2.Models
                     new Pant
                     {
                         PBrand = "Fly",
-                        PModel = "Kinetic Era Pants",
+                        PModel = "Kinetic Era Pant",
                         PColor = "Black/White",
                         PSize = "28",
                         PPrice = 79.99,
@@ -264,6 +360,54 @@ namespace GearShopV2.Models
                     HQtyOnHand = 13,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tho_19_hel_sec_hyp-gry_pnk.jpg",
                     SizeCat = "Adult",
+                },                
+                new Helmet
+                {
+                    HBrand = "Answer",
+                    HModel = "AR3 Haze",
+                    HColor = "Grey/Blue",
+                    HSize = "XL",
+                    HPrice = 169.95,
+                    HSalePrice = 57.85,
+                    HQtyOnHand = 13,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/a/ans_18_hel_ar3_haz-gry_blu.jpg",
+                    SizeCat = "Adult",
+                },                
+                new Helmet
+                {
+                    HBrand = "Troy Lee",
+                    HModel = "SE4 Factory W/MIPS",
+                    HColor = "Yellow/Blue",
+                    HSize = "S",
+                    HPrice = 200.00,
+                    HSalePrice = 200.00,
+                    HQtyOnHand = 8,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tld_19_hel_se4_fac-yel_blu.jpg",
+                    SizeCat = "Adult",
+                },                
+                new Helmet
+                {
+                    HBrand = "Fox",
+                    HModel = "V1 Mata",
+                    HColor = "Blue/White",
+                    HSize = "S",
+                    HPrice = 169.95,
+                    HSalePrice = 127.46,
+                    HQtyOnHand = 12,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_19_hel_v1_mat-blu_wht.jpg",
+                    SizeCat = "Youth",
+                },                
+                new Helmet
+                {
+                    HBrand = "Thor",
+                    HModel = "Sector Hype",
+                    HColor = "Flow Acid/Red",
+                    HSize = "XS",
+                    HPrice = 109.95,
+                    HSalePrice = 83.95,
+                    HQtyOnHand = 8,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tho_18_hel_sec_hyp-flo_aci_red.jpg",
+                    SizeCat = "Youth",
                 },
                 new Helmet
                 {
