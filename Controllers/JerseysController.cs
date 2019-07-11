@@ -20,13 +20,13 @@ namespace GearShopV2.Controllers
         }
 
         // GET: Jerseys
-        public async Task<IActionResult> Index(string gearColor, string searchString)
+        public async Task<IActionResult> Index(string sizeCatergory, string searchString)
 
         {
             //Use LINQ to get a list of all colors
-            IQueryable<string> colorQuery = from j in _context.Jersey
-                                            orderby j.JColor
-                                            select j.JColor;
+            IQueryable<string> sizeQuery = from j in _context.Jersey
+                                            orderby j.SizeCat
+                                            select j.SizeCat;
 
             var jerseys = from j in _context.Jersey
                           select j;
@@ -36,12 +36,18 @@ namespace GearShopV2.Controllers
                 jerseys = jerseys.Where(s => s.JBrand.Contains(searchString));
             }
 
-            if (!string.IsNullOrEmpty(gearColor))
+            if (!string.IsNullOrEmpty(sizeCatergory))
             {
-                jerseys = jerseys.Where(x => x.JColor == gearColor);
+                jerseys = jerseys.Where(x => x.SizeCat == sizeCatergory);
             }
 
-            return View(await jerseys.ToListAsync());
+            var gearSizeVM = new GearSizeViewModel
+            {
+                SizeCats = new SelectList(await sizeQuery.Distinct().ToListAsync()),
+                Jerseys = await jerseys.ToListAsync()
+            };
+
+            return View(gearSizeVM);
         }
 
 

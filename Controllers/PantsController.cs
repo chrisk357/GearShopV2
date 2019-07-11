@@ -20,16 +20,32 @@ namespace GearShopV2.Controllers
         }
 
         // GET: Pants
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string sizeCategory, string searchString)
         {
+            IQueryable<string> sizeQuery = from p in _context.Pant
+                                           orderby p.SizeCat
+                                           select p.SizeCat;
+
             var pants = from p in _context.Pant
                         select p;
+
             if ( !String.IsNullOrEmpty(searchString))
             {
                 pants = pants.Where(s => s.PBrand.Contains(searchString));
             }
 
-            return View(await pants.ToListAsync());
+            if (!string.IsNullOrEmpty(sizeCategory))
+            {
+                pants = pants.Where(X => X.SizeCat == sizeCategory);
+            }
+
+            var gearSizeVM = new GearSizeViewModel
+            {
+                SizeCats = new SelectList(await sizeQuery.Distinct().ToListAsync()),
+                Pants = await pants.ToListAsync()
+            };
+
+            return View(gearSizeVM);
         }
 
         [HttpPost]

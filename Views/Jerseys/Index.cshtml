@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GearShopV2.Models.Jersey>
+﻿@model GearShopV2.Models.GearSizeViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -12,6 +12,10 @@
 
 <form asp-controller="Jerseys" asp-action="Index" method="get">
     <p>
+        <select asp-for="SizeCategory" asp-items="Model.SizeCats">
+            <option value="">All</option>
+        </select>
+
         Brand: <input type="text" name="searchString">
         <input type="submit" value="Filter" />
     </p>
@@ -21,37 +25,37 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.JBrand)
+                @Html.DisplayNameFor(model => model.Jerseys[0].JBrand)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JModel)
+                @Html.DisplayNameFor(model => model.Jerseys[0].JModel)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JColor)
+                @Html.DisplayNameFor(model => model.Jerseys[0].JColor)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JSize)
+                @Html.DisplayNameFor(model => model.Jerseys[0].JSize)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JPrice)
+                @Html.DisplayNameFor(model => model.Jerseys[0].JPrice)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JSalePrice)
+                @Html.DisplayNameFor(model => model.Jerseys[0].JSalePrice)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JQtyOnHand)
+                @Html.DisplayNameFor(model => model.Jerseys[0].JQtyOnHand)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JImageUrl)
+                @Html.DisplayNameFor(model => model.Jerseys[0].JImageUrl)
             </th>            
             <th>
-                @Html.DisplayNameFor(model => model.SizeCat)
+                @Html.DisplayNameFor(model => model.Jerseys[0].SizeCat)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Jerseys) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.JBrand)
