@@ -20,8 +20,13 @@ namespace GearShopV2.Controllers
         }
 
         // GET: Helmets
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string sizeCategory, string searchString)
         {
+            IQueryable<string> sizeQuery = from h in _context.Helmet
+                                           orderby h.SizeCat
+                                           select h.SizeCat;
+
+
             var helmets = from h in _context.Helmet
                           select h;
 
@@ -30,7 +35,18 @@ namespace GearShopV2.Controllers
                 helmets = helmets.Where(s => s.HBrand.Contains(searchString));
             }
 
-            return View(await helmets.ToListAsync());
+            if (!string.IsNullOrEmpty(sizeCategory))
+            {
+                helmets = helmets.Where(x => x.SizeCat == sizeCategory);
+            }
+
+            var gearSizeVM = new GearSizeViewModel
+            {
+                SizeCats = new SelectList(await sizeQuery.Distinct().ToListAsync()),
+                Helmets = await helmets.ToListAsync()
+            };
+
+            return View(gearSizeVM);
         }
 
         [HttpPost]
