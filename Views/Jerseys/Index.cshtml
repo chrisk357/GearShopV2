@@ -87,7 +87,11 @@
             </td>
             <td>
                 $@Html.DisplayFor(modelItem => item.JSalePrice)
-            </td>
+                @if (item.JSalePrice < item.JPrice)
+                {
+                        <span class="badge badge-success">ON SALE</span>
+                }
+                </td>
             <!--
             <td>
                 @Html.DisplayFor(modelItem => item.JQtyOnHand)

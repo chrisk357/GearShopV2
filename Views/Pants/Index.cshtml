@@ -72,6 +72,8 @@
         </tr>
     </thead>
     <tbody>
+
+
 @foreach (var item in Model.Pants) {
         <tr>
             <td>
@@ -90,6 +92,11 @@
             </td>
             <td>
                 $@Html.DisplayFor(modelItem => item.PSalePrice)
+                @if (item.PSalePrice < item.PPrice)
+                {
+                    <span class="badge badge-success">ON SALE</span>
+                }
+
             </td>
 
             <!--
