@@ -4,12 +4,20 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Closeout Pants</h1>
+<h1 class="text-center">Closeout Pants</h1>
 <!--
 <p>
     <a asp-action="Create">Create New</a>
 </p>
 -->
+
+<div class="container">
+    <div class="alert alert-danger alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>BE ADVISED!!</strong> These items are not for sale nor are the prices real by any means. They are used simply as examples for the web application!!
+    </div>
+</div>
+
 
 <form asp-controller="Pants" asp-action="Index" method="get">
     <p>
