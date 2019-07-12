@@ -38,13 +38,13 @@
             @Html.DisplayNameFor(model => model.JPrice)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.JPrice)
+            $@Html.DisplayFor(model => model.JPrice)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.JSalePrice)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.JSalePrice)
+            $@Html.DisplayFor(model => model.JSalePrice)
         </dd>
         <!--
     <dt class = "col-sm-2">
@@ -60,9 +60,11 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SizeCat)
         </dd>
+        <!--
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.JImageUrl)
         </dt>
+         -->
         <dd class="col-sm-10">
             <img src="@Html.DisplayFor(model => model.JImageUrl)" />
         </dd>
