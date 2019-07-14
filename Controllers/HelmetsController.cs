@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GearShopV2.Data;
 using GearShopV2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GearShopV2.Controllers
 {
@@ -74,6 +75,7 @@ namespace GearShopV2.Controllers
             return View(helmet);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Helmets/Create
         public IActionResult Create()
         {
@@ -83,6 +85,7 @@ namespace GearShopV2.Controllers
         // POST: Helmets/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,HBrand,HModel,HColor,HSize,HPrice,HSalePrice,HQtyOnHand,HImageUrl,HSizeCat")] Helmet helmet)
@@ -96,6 +99,7 @@ namespace GearShopV2.Controllers
             return View(helmet);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Helmets/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -115,6 +119,8 @@ namespace GearShopV2.Controllers
         // POST: Helmets/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,HBrand,HModel,HColor,HSize,HPrice,HSalePrice,HQtyOnHand,HImageUrl,HSizeCat")] Helmet helmet)
@@ -147,6 +153,9 @@ namespace GearShopV2.Controllers
             return View(helmet);
         }
 
+
+        [Authorize(Roles = "Admin")]
+
         // GET: Helmets/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -165,6 +174,7 @@ namespace GearShopV2.Controllers
             return View(helmet);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Helmets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

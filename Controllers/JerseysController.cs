@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GearShopV2.Data;
 using GearShopV2.Models;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace GearShopV2.Controllers
 {
@@ -76,6 +78,8 @@ namespace GearShopV2.Controllers
             return View(jersey);
         }
 
+
+        [Authorize(Roles = "Admin")]
         // GET: Jerseys/Create
         public IActionResult Create()
         {
@@ -85,6 +89,8 @@ namespace GearShopV2.Controllers
         // POST: Jerseys/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,JBrand,JModel,JColor,JSize,JPrice,JSalePrice,JQtyOnHand,JImageUrl,JSizeCat")] Jersey jersey)
@@ -98,6 +104,8 @@ namespace GearShopV2.Controllers
             return View(jersey);
         }
 
+
+        [Authorize(Roles = "Admin")]
         // GET: Jerseys/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -117,6 +125,7 @@ namespace GearShopV2.Controllers
         // POST: Jerseys/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,JBrand,JModel,JColor,JSize,JPrice,JSalePrice,JQtyOnHand,JImageUrl,JSizeCat")] Jersey jersey)
@@ -149,6 +158,7 @@ namespace GearShopV2.Controllers
             return View(jersey);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Jerseys/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -167,6 +177,7 @@ namespace GearShopV2.Controllers
             return View(jersey);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Jerseys/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
