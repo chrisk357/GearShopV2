@@ -1,0 +1,136 @@
+﻿@model GearShopV2.Models.GearSizeViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Closeout Helmets</h1>
+<!--
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+    -->
+
+<div class="container">
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>BE ADVISED!!</strong> These items are not for sale nor are the prices real by any means. They are used simply as examples for the web application!!
+    </div>
+</div>
+
+
+
+<form asp-controller="Helmets" asp-action="Index" method="get">
+    <p>
+        <select asp-for="SizeCategory" asp-items="Model.SizeCats">
+            <option value="">All</option>
+        </select>
+
+        Brand: <input type="text" name="searchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Helmets[0].HBrand)
+            </th>
+            <!--
+            <th>
+                @Html.DisplayNameFor(model => model.Helmets[0].HModel)
+            </th>
+             -->
+            <th>
+                @Html.DisplayNameFor(model => model.Helmets[0].HColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Helmets[0].HSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Helmets[0].HPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Helmets[0].HSalePrice)
+            </th>
+            <!--
+                <th>
+                    @Html.DisplayNameFor(model => model.Helmets[0].HQtyOnHand)
+                </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Helmets[0].HImageUrl)
+            </th>
+            -->
+            <th>
+                @Html.DisplayNameFor(model => model.Helmets[0].SizeCat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Helmets)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HBrand) -
+                    @Html.DisplayFor(modelItem => item.HModel)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.HColor)
+                </td>
+
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.HSize)
+                </td>
+
+                <td>
+                    $@Html.DisplayFor(modelItem => item.HPrice)
+                </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.HSalePrice)
+                    @if (item.HSalePrice < item.HPrice)
+                    {
+                        <span class="badge badge-success">ON SALE</span>
+                    }
+                </td>
+                <!--
+                <td>
+                    @Html.DisplayFor(modelItem => item.HQtyOnHand)
+                </td>
+                -->
+
+
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.SizeCat)
+                </td>
+
+
+
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.HImageUrl)" class="img-thumbnail" alt="ERROR"></a>
+                </td>
+
+
+
+
+                <td>
+                    <i class="fas fa-cart-plus" style="color:green"></i>
+
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+
+                    <!--   <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>   -->
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
