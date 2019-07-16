@@ -6,7 +6,16 @@
     <title>@ViewData["Title"] - Closeout Gear</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" 
+              />
+
+        <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <script src="~/lib/jquery/core.js"></script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+
+
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -16,15 +25,16 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
     </environment>
     <link href="~/lib/font-awesome/css/all.min.css" rel="stylesheet" />
-    <link href="~/css/site.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/core.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
 </head>
 
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">GearShopV2</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -51,12 +61,16 @@
             </div>
         </nav>
     </header>
+
+
     <div class="container">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
+
+
 
     <footer class="border-top footer text-muted">
         <div class="container">

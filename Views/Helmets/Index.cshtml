@@ -1,5 +1,4 @@
 ﻿@model GearShopV2.Models.GearSizeViewModel
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -31,38 +30,39 @@
     </p>
 </form>
 
-
-
+    <div class="card-deck">
 
 
         @foreach (var item in Model.Helmets)
         {
-        <div class="col-4">
-            <div class="card-group">
-                <div class="card-header">
-                    <a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.HImageUrl)" class="img-thumbnail" alt="ERROR"></a>
-                    <div class="card-body text-left">
-                        <b>Model:</b> @Html.DisplayFor(modelItem => item.HBrand) - @Html.DisplayFor(modelItem => item.HModel) <br>
-                        <b>Color:</b> @Html.DisplayFor(modelItem => item.HColor) <br>
-                        <b>Size:</b> @Html.DisplayFor(modelItem => item.SizeCat) -  @Html.DisplayFor(modelItem => item.HSize) <br>
-                        @if (item.HSalePrice < item.HPrice)
-                        {
-                            <b>Price:</b> @Html.DisplayFor(modelItem => item.HSalePrice)
-                            <span class="badge badge-success">ON SALE</span>
-                        }
-                        else
-                        {
-                            <b>Price:</b> @Html.DisplayFor(modelItem => item.HPrice) <br />
-                        }
-                                        <i class="fas fa-cart-plus" style="color:green"></i>
+            <div class="card-deck container col-3 ">
 
-                    </div>
-                    <p>Contact</p>
-                </div>
+                <div class="card-body cardMerch">
+
+                    <p><a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.HImageUrl)" class="img-thumbnail" alt="ERROR"></a></p>
+
+
+
+                    <b>Model:</b> @Html.DisplayFor(modelItem => item.HBrand) - @Html.DisplayFor(modelItem => item.HModel) <br>
+                    <b>Color:</b> @Html.DisplayFor(modelItem => item.HColor) <br>
+                    <b>Size:</b> @Html.DisplayFor(modelItem => item.SizeCat) -  @Html.DisplayFor(modelItem => item.HSize) <br>
+                    @if (item.HSalePrice < item.HPrice)
+                    {
+                        <b>Price:</b> @Html.DisplayFor(modelItem => item.HSalePrice)
+                        <span class="badge badge-success">ON SALE</span>
+                    }
+                    else
+                    {
+                        <b>Price:</b>
+                        @Html.DisplayFor(modelItem => item.HPrice) <br />
+                    }
+              
+                    
+                    <i class="fas fa-cart-plus container-fluid" style="color:green"></i>
+                 </div>
             </div>
-        </div>
-        }
+
+}
 
 
 
-     
