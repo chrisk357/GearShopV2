@@ -17,10 +17,11 @@ namespace GearShopV2.Models
                     <DbContextOptions<ApplicationDbContext>>()))
             {
                 //look for jerseys
-                if (context.Jersey.Any())
+             /*   if (context.Jersey.Any())
                 {
                     return; //Db has been seeded
                 }
+                */
                 context.Jersey.AddRange(
                     new Jersey
                     {
@@ -218,10 +219,11 @@ namespace GearShopV2.Models
 
 
 
-                if (context.Pant.Any())
+            /*    if (context.Pant.Any())
                 {
                     return; //Db has been seeded
                 }
+            */
                     context.Pant.AddRange(
                     new Pant
                     {
@@ -412,14 +414,15 @@ namespace GearShopV2.Models
                         PPrice = 79.99,
                         PSalePrice = 65.99,
                         PQtyOnHand = 6,
-                        PImageUrl = "ttps://images.rockymountainatvmc.com/images/prod/400/f/fly_18_pan_kin_era-blk_wht.jpg",
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_18_pan_kin_era-blk_wht.jpg",
                         SizeCat = "Youth",
                     });
 
-                if (context.Helmet.Any())
+         /*       if (context.Helmet.Any())
                 {
                     return; //Db has been seeded
                 }
+        */
                 context.Helmet.AddRange(
                 new Helmet
                 {
@@ -630,6 +633,7 @@ namespace GearShopV2.Models
                     HBrand = "Fox",
                     HModel = "V1 Motif",
                     HColor = "Blue/Grey",
+                    HSize = "M",
                     HPrice = 134.96,
                     HSalePrice = 179.95,
                     HQtyOnHand = 10,
