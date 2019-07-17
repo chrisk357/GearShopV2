@@ -17,11 +17,11 @@ namespace GearShopV2.Models
                     <DbContextOptions<ApplicationDbContext>>()))
             {
                 //look for jerseys
-             /*   if (context.Jersey.Any())
+                if (context.Jersey.Any())
                 {
                     return; //Db has been seeded
                 }
-                */
+
                 context.Jersey.AddRange(
                     new Jersey
                     {
@@ -219,12 +219,12 @@ namespace GearShopV2.Models
 
 
 
-            /*    if (context.Pant.Any())
+                if (context.Pant.Any())
                 {
                     return; //Db has been seeded
                 }
-            */
-                    context.Pant.AddRange(
+
+                context.Pant.AddRange(
                     new Pant
                     {
                         PBrand = "MSR",
@@ -418,11 +418,11 @@ namespace GearShopV2.Models
                         SizeCat = "Youth",
                     });
 
-         /*       if (context.Helmet.Any())
+                if (context.Helmet.Any())
                 {
                     return; //Db has been seeded
                 }
-        */
+
                 context.Helmet.AddRange(
                 new Helmet
                 {
