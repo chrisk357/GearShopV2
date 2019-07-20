@@ -1,7 +1,34 @@
-﻿
+﻿@model  GearShopV2.Models.ContactUs
 @{
     ViewData["Title"] = "ContactUs";
 }
 
 <h1>ContactUs</h1>
 
+<fieldset>
+
+    @using (Html.BeginForm())
+    {
+        <p>
+           @Html.LabelFor(x => x.contactName)
+           @Html.EditorFor(x => x.contactName)
+        </p>            
+
+         <p>
+             @Html.LabelFor(x => x.contactEmail)
+             @Html.EditorFor(x => x.contactEmail)
+         </p>
+
+         <p>
+             @Html.LabelFor(x => x.contactMessage)
+             @Html.TextAreaFor(x => x.contactMessage)
+         </p>
+
+
+         <p>
+             <button type="submit">POST</button>
+         </p>
+    }
+
+
+</fieldset>
