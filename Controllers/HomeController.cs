@@ -14,8 +14,20 @@ namespace GearShopV2.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult ContactUs()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult ContactUs(ContactUs contactUs)
+        {
+            contactUs.contactEmail = User.Identity.Name;
+            contactUs.Posted = DateTime.Now;
 
 
+            return View();
+        }
 
         public IActionResult Privacy()
         {
