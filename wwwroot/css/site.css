@@ -13,6 +13,12 @@ a.navbar-brand {
     padding-bottom: 30px;
 }
 
+.myHeaders {
+    color: blue;
+    text-align:center;
+    text-shadow: 3px 2px red;
+    font-weight:bold;
+}
 
 
 /* Sticky footer styles
