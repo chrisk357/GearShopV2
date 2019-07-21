@@ -8,8 +8,9 @@ a.navbar-brand {
 }
 
 .cardMerch {
-    border: dashed;
-    border-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-bottom: 30px;
 }
 
 
