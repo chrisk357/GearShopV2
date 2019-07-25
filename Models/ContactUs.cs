@@ -13,7 +13,7 @@ namespace GearShopV2.Models
         public string contactName { get; set; }
         [Required, Display(Name = "Email")]
         public string contactEmail { get; set; }
-        [Required, Display(Name = "Message")]
+        [Required, Display(Name = "Message"), MaxLength(1024)]
         public string contactMessage { get; set; }
         [DataType(DataType.Date)]
         public DateTime Posted { get; set; }
