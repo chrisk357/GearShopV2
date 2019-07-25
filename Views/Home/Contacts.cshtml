@@ -1,0 +1,47 @@
+﻿@model IEnumerable<GearShopV2.Models.ContactUs>
+
+@{
+    ViewData["Title"] = "Contacts";
+}
+
+<h1>Contacts</h1>
+
+=
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.contactName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contactEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contactMessage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Posted)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.contactName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contactEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contactMessage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Posted)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>

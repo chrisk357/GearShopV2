@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using GearShopV2.Models;
 using GearShopV2.Data;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace GearShopV2.Controllers
 {
@@ -23,19 +25,53 @@ namespace GearShopV2.Controllers
         {
             return View();
         }
+
+        public async Task<IActionResult> Contacts()
+        {
+
+            
+
+            var contacts = from c in _context.ContactUs
+                           select c;
+
+
+            var contactUsVM = new ContactUsViewModel
+            {
+                Contacts = await contacts.ToListAsync()
+            };
+
+            return View(contactUsVM);
+        }
+
+        
+
+
+
+
         [HttpGet]
         public IActionResult ContactUs()
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult ContactUs(ContactUs contactUs)
+        [Authorize]
+        [HttpPost, ValidateAntiForgeryToken]
+        public async Task<IActionResult> ContactUs([Bind("Id, contactName, contactEmail, contactMessage, Posted")] ContactUs contact)
         {
-            contactUs.contactEmail = User.Identity.Name;
-            contactUs.Posted = DateTime.Now;
+            
+            if (ModelState.IsValid)
+            {
+                contact.Posted.Equals(DateTime.Now);
+                _context.Add(contact);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(contact);
+        }
 
 
-            return View();
+        private bool ContactExists(int id)
+        {
+            return _context.ContactUs.Any(e => e.Id == id);
         }
 
 

@@ -8,6 +8,7 @@ namespace GearShopV2.Models
 {
     public class ContactUs
     {
+        
         public int Id { get; set; }
         [Required, Display(Name = "Name")]
         public string contactName { get; set; }
@@ -17,7 +18,6 @@ namespace GearShopV2.Models
         public string contactMessage { get; set; }
         [DataType(DataType.Date)]
         public DateTime Posted { get; set; }
-
-
+        public List<ContactUs> Contacts { get; set; }
     }
 }
