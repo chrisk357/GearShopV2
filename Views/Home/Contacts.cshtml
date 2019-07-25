@@ -1,12 +1,40 @@
-﻿@model IEnumerable<GearShopV2.Models.ContactUs>
+﻿@model GearShopV2.Models.ContactUsViewModel
 
 @{
     ViewData["Title"] = "Contacts";
 }
 
-<h1>Contacts</h1>
+<h1 class="myHeaders">Contacts</h1>
 
-=
+
+
+@foreach (var item in Model.Contacts)
+{
+    <table class="table table-active table-hover table-responsive-xl">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Html.DisplayFor(ModelItem => item.Posted)</td>
+                <td>@Html.DisplayFor(modelItem => item.contactName) </td>
+                <td>@Html.DisplayFor(modelItem => item.contactEmail)</td>
+                <td>@Html.DisplayFor(ModelItem => item.contactMessage)</td>
+
+            </tr>
+        </tbody>
+    </table>
+}
+
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -26,7 +54,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.ContactUs) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.contactName)
@@ -40,8 +68,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Posted)
             </td>
-
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
         </tr>
 }
     </tbody>
-</table>
+</table>*@
+
+
+

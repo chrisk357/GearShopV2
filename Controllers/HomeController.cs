@@ -28,8 +28,7 @@ namespace GearShopV2.Controllers
 
         public async Task<IActionResult> Contacts()
         {
-
-            
+                     
 
             var contacts = from c in _context.ContactUs
                            select c;
@@ -42,8 +41,6 @@ namespace GearShopV2.Controllers
 
             return View(contactUsVM);
         }
-
-        
 
 
 
