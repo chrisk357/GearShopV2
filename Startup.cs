@@ -35,6 +35,8 @@ namespace GearShopV2
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+         //   services.AddIdentity<IdentityUser, IdentityRole>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 
@@ -65,7 +67,7 @@ namespace GearShopV2
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseIdentity();
             app.UseAuthentication();
 
             app.UseMvc(routes =>

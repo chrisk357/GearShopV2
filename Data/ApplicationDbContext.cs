@@ -16,5 +16,6 @@ namespace GearShopV2.Data
         public DbSet<GearShopV2.Models.Jersey> Jersey { get; set; }
         public DbSet<GearShopV2.Models.Pant> Pant { get; set; }
         public DbSet<GearShopV2.Models.Helmet> Helmet { get; set; }
+        public DbSet<GearShopV2.Models.ContactUs> ContactUs { get; set; }
     }
 }
