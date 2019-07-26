@@ -25,7 +25,7 @@ namespace GearShopV2.Controllers
         {
             return View();
         }
-
+        //push update
         public async Task<IActionResult> Contacts()
         {
                      
