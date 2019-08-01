@@ -1,3 +1,3 @@
 # GearShopV2
-Add Info HERE
+Add Info <b>HERE</b>
 Here is the Info page
