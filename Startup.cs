@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using GearShopV2.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.Facebook;
 
 namespace GearShopV2
 {
@@ -35,7 +36,7 @@ namespace GearShopV2
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-         //   services.AddIdentity<IdentityUser, IdentityRole>();
+            //   services.AddIdentity<IdentityUser, IdentityRole>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -44,8 +45,15 @@ namespace GearShopV2
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
+                .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
 
         }
 

@@ -5,36 +5,36 @@
 
 
 
-@{
+@*@{
     ViewData["Title"] = "ContactUs";
-}
+}*@
 
 <h1 class="myHeaders">ContactUs</h1>
 
 
 @*<fieldset>
-    @using (Html.BeginForm())
-    {
-        <p>
-            @Html.LabelFor(x => x.contactName)
-            @Html.EditorFor(x => x.contactName)
-        </p>
+        @using (Html.BeginForm())
+        {
+            <p>
+                @Html.LabelFor(x => x.contactName)
+                @Html.EditorFor(x => x.contactName)
+            </p>
 
-        <p>
-            @Html.LabelFor(x => x.contactEmail)
-            @Html.EditorFor(x => x.contactEmail)
-        </p>
+            <p>
+                @Html.LabelFor(x => x.contactEmail)
+                @Html.EditorFor(x => x.contactEmail)
+            </p>
 
-        <p>
-            @Html.LabelFor(x => x.contactMessage)
-            @Html.TextAreaFor(x => x.contactMessage)
-        </p>
-        
-        <p>
-            <button type="submit">POST</button>
-        </p>
-    }
-</fieldset>*@
+            <p>
+                @Html.LabelFor(x => x.contactMessage)
+                @Html.TextAreaFor(x => x.contactMessage)
+            </p>
+
+            <p>
+                <button type="submit">POST</button>
+            </p>
+        }
+    </fieldset>*@
 
 
 <div class="row">
@@ -64,13 +64,14 @@
 </div>
 
 
-       
-
 
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
 
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+

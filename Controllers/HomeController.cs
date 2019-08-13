@@ -43,6 +43,13 @@ namespace GearShopV2.Controllers
         }
 
 
+        public IActionResult OnGetPartial() =>
+            new PartialViewResult
+            {
+                ViewName = "_Contacts",
+                //ViewData = Contacts,
+            };
+
 
 
         [HttpGet]
