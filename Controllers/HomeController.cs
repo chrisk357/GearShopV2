@@ -64,7 +64,8 @@ namespace GearShopV2.Controllers
             
             if (ModelState.IsValid)
             {
-                contact.Posted.Equals(DateTime.Now);
+                contact.Posted = DateTime.Now;
+              //  contact.Posted.Equals(DateTime.Now);
                 _context.Add(contact);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
