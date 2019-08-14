@@ -1,4 +1,8 @@
-﻿using GearShopV2.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using GearShopV2.Data;
 using GearShopV2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,6 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+
 
 namespace GearShopV2
 {
@@ -42,7 +48,7 @@ namespace GearShopV2
 
             //Changed adddefaultidentity to addidentity and swapped out application user for the original IdentityUser param
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddDefaultIdentity<ApplicationUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
@@ -53,8 +59,8 @@ namespace GearShopV2
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
             });
 
-            services.AddMemoryCache();
-            services.AddSession();
+           // services.AddMemoryCache();
+           // services.AddSession();
 
         }
 
@@ -77,7 +83,7 @@ namespace GearShopV2
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            app.UseSession();
+           // app.UseSession();
             app.UseIdentity();
             app.UseAuthentication();
 

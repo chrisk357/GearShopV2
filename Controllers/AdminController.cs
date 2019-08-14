@@ -13,14 +13,12 @@ namespace GearShopV2.Controllers
     public class AdminController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
+       // private readonly SignInManager<ApplicationUser> _signInManager;
 
 
-        public AdminController(UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+        public AdminController(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
-            _signInManager = signInManager;
         }
         public IActionResult Index()
         {
@@ -44,7 +42,10 @@ namespace GearShopV2.Controllers
             var user = new ApplicationUser()
             {
                 UserName = addUserViewModel.UserName,
-                Email = addUserViewModel.Email
+                Email = addUserViewModel.Email,
+                Birthdate = addUserViewModel.Birthdate,
+                City = addUserViewModel.City,
+                State = addUserViewModel.State
             };
 
             IdentityResult result = await _userManager.CreateAsync(user, addUserViewModel.Password);
@@ -67,18 +68,32 @@ namespace GearShopV2.Controllers
             if (user == null)
                 return RedirectToAction("UserManagement", _userManager.Users);
 
-            return View(user);
+            var claims = await _userManager.GetClaimsAsync(user);
+            var vm = new EditUserViewModel()
+            {
+                Id = user.Id,
+                Email = user.Email,
+                UserName = user.UserName,
+                UserClaims = claims.Select(c => c.Value)
+            .ToList()
+            };
+
+            return View(vm);
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditUser(string id, string UserName, string Email)
+        public async Task<IActionResult> EditUser(EditUserViewModel editUserViewModel)
         {
-            var user = await _userManager.FindByIdAsync(id);
+            var user = await _userManager.FindByIdAsync(editUserViewModel.Id);
 
             if (user != null)
             {
-                user.Email = Email;
-                user.UserName = UserName;
+                user.Email = editUserViewModel.Email;
+                user.UserName = editUserViewModel.UserName;
+                user.Birthdate = editUserViewModel.Birthdate;
+                user.City = editUserViewModel.City;
+                user.State = editUserViewModel.State;
+
 
                 var result = await _userManager.UpdateAsync(user);
 
@@ -87,7 +102,7 @@ namespace GearShopV2.Controllers
 
                 ModelState.AddModelError("", "User not updated, something went wrong.");
 
-                return View(user);
+                return View(editUserViewModel);
             }
 
             return RedirectToAction("UserManagement", _userManager.Users);
