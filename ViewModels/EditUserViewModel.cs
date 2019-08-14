@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -28,6 +30,8 @@ namespace GearShopV2.ViewModels
         public string City { get; set; }
 
         public string State { get; set; }
+
+       // public IEnumerable<SelectListItem> RolesList { get; set; }
     }
 }
 

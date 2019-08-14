@@ -9,11 +9,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 
 namespace GearShopV2
@@ -47,11 +49,18 @@ namespace GearShopV2
                     Configuration.GetConnectionString("DefaultConnection")));
 
             //Changed adddefaultidentity to addidentity and swapped out application user for the original IdentityUser param
-
-            services.AddDefaultIdentity<ApplicationUser>()
-                .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            //Because changing adddefaultidentity to addidentity did not give me error when adding identityRole as param
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+            //REMOVED THESE BECAUSE OF THE MIGRATION INSTRUCTIONS FROM MICROSOFT DOCS
+            //THEY WERE NOT SHOWN IN THE COOKIBASED AUTHENTICATION EXAMPLES
+            //     .AddDefaultUI(UIFramework.Bootstrap4)
+            //     .AddRoles<IdentityRole>()
+            //
+            //ALSO ADDED THIS STATEMENT FROM THE MICROSOFT EXAMPLE DOCS THE COOKIE
+            //----------------------------------------------------
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/LogIn");
 
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
@@ -79,13 +88,13 @@ namespace GearShopV2
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseAuthentication();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-           // app.UseSession();
-            app.UseIdentity();
-            app.UseAuthentication();
+          //  app.UseSession();
+          //  app.UseIdentity();
 
             app.UseMvc(routes =>
             {
