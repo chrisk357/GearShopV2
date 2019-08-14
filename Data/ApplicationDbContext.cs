@@ -1,7 +1,12 @@
-﻿using GearShopV2.Models;
-using Microsoft.AspNetCore.Identity;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using System.Linq;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using GearShopV2.Models;
 
 namespace GearShopV2.Data
 {

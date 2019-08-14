@@ -1,4 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+
 
 namespace GearShopV2.Models
 {
@@ -7,7 +15,7 @@ namespace GearShopV2.Models
         public int Id { get; set; }
         [Required, Display(Name = "Brand")]
         public string JBrand { get; set; }
-        [Required, Display(Name = "Model")]
+        [Required,  Display(Name = "Model")]
         public string JModel { get; set; }
         [Display(Name = "Color")]
         public string JColor { get; set; }
