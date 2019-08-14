@@ -1,5 +1,3 @@
-using System;
-
 namespace GearShopV2.Models
 {
     public class ErrorViewModel

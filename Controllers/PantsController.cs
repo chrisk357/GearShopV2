@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using GearShopV2.Data;
+using GearShopV2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using GearShopV2.Data;
-using GearShopV2.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GearShopV2.Controllers
 {
@@ -29,7 +28,7 @@ namespace GearShopV2.Controllers
             var pants = from p in _context.Pant
                         select p;
 
-            if ( !String.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchString))
             {
                 pants = pants.Where(s => s.PBrand.Contains(searchString));
             }

@@ -2,9 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace GearShopV2.Models
 {
@@ -70,7 +68,7 @@ namespace GearShopV2.Models
                         JQtyOnHand = 17,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/msr_19_jer_axx_19_5-blk_flo_grn.jpg",
                         SizeCat = "Adult",
-                    },                    
+                    },
                     new Jersey
                     {
                         JBrand = "Moose",
@@ -82,7 +80,7 @@ namespace GearShopV2.Models
                         JQtyOnHand = 9,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/moo_19_jer_qua-red_wht_blu.jpg",
                         SizeCat = "Youth",
-                    },                    
+                    },
                     new Jersey
                     {
                         JBrand = "Answer",
@@ -94,7 +92,7 @@ namespace GearShopV2.Models
                         JQtyOnHand = 11,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/a/ans_19_jer_syn_dri-hyp_aci_blk.jpg",
                         SizeCat = "Youth",
-                    },                    
+                    },
                     new Jersey
                     {
                         JBrand = "Shift",
@@ -106,7 +104,7 @@ namespace GearShopV2.Models
                         JQtyOnHand = 8,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/s/shi_19_jer_whi_mus-blu.jpg",
                         SizeCat = "Youth",
-                    },                    
+                    },
                     new Jersey
                     {
                         JBrand = "O'Neal",
@@ -118,7 +116,7 @@ namespace GearShopV2.Models
                         JQtyOnHand = 13,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/o/one_16_jer_ele_aft-blu_red.jpg",
                         SizeCat = "Adult",
-                    },              
+                    },
                     new Jersey
                     {
                         JBrand = "Fox",
@@ -130,7 +128,7 @@ namespace GearShopV2.Models
                         JQtyOnHand = 9,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_19_jer_180_cot-blu.jpg",
                         SizeCat = "Adult",
-                    },                      
+                    },
                     new Jersey
                     {
                         JBrand = "Fox",
@@ -142,7 +140,7 @@ namespace GearShopV2.Models
                         JQtyOnHand = 11,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_19_jer_180_cot-nvy.jpg",
                         SizeCat = "Adult",
-                    },   
+                    },
                     new Jersey
                     {
                         JBrand = "Answer",
@@ -154,7 +152,7 @@ namespace GearShopV2.Models
                         JQtyOnHand = 6,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/a/ans_19_jer_syn_flo-ast_ind_bri_red.jpg",
                         SizeCat = "Adult",
-                    },                      
+                    },
                     new Jersey
                     {
                         JBrand = "Answer",
@@ -166,7 +164,7 @@ namespace GearShopV2.Models
                         JQtyOnHand = 16,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/a/ans_19_jer_syn_flo-hyp_aci_mid_ast.jpg",
                         SizeCat = "Youth",
-                    },                     
+                    },
                     new Jersey
                     {
                         JBrand = "O'Neal",
@@ -178,7 +176,7 @@ namespace GearShopV2.Models
                         JQtyOnHand = 12,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/o/one_16_jer_ele_aft-blu_red.jpg",
                         SizeCat = "Youth",
-                    },                      
+                    },
                     new Jersey
                     {
                         JBrand = "Fox",
@@ -190,7 +188,7 @@ namespace GearShopV2.Models
                         JQtyOnHand = 10,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_18_jer_180_mas-blk.jpg",
                         SizeCat = "Youth",
-                    },                    
+                    },
                     new Jersey
                     {
                         JBrand = "Fly",
@@ -248,7 +246,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 8,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_19_pan_f16-blu_blk_hi_vis.jpg",
                         SizeCat = "Adult",
-                    },                    
+                    },
                     new Pant
                     {
                         PBrand = "O'Neal",
@@ -260,7 +258,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 14,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/o/one_19_pan_ele-blu.jpg",
                         SizeCat = "Youth",
-                    },                    
+                    },
                     new Pant
                     {
                         PBrand = "Thor",
@@ -272,7 +270,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 7,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tho_19_pan_sec_she-lig_gry_red.jpg",
                         SizeCat = "Adult",
-                    },                     
+                    },
                     new Pant
                     {
                         PBrand = "Shift",
@@ -284,7 +282,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 19,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/s/shi_19_pan_whi_mus-pur.jpg",
                         SizeCat = "Adult",
-                    },                        
+                    },
                     new Pant
                     {
                         PBrand = "Answer",
@@ -296,7 +294,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 9,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/a/ans_18_pan_syn-cya_nvy.jpg",
                         SizeCat = "Adult",
-                    },                     
+                    },
                     new Pant
                     {
                         PBrand = "Troy Lee",
@@ -308,7 +306,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 10,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tld_19_pan_gp_jet-red_yel.jpg",
                         SizeCat = "Youth",
-                    },                     
+                    },
                     new Pant
                     {
                         PBrand = "Troy Lee",
@@ -320,7 +318,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 13,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tld_19_pan_gp_jet-blu.jpg",
                         SizeCat = "Youth",
-                    },                        
+                    },
                     new Pant
                     {
                         PBrand = "Moose",
@@ -332,7 +330,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 12,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/moo_19_pan_qua-tea_hi_viz.jpg",
                         SizeCat = "Youth",
-                    },                          
+                    },
                     new Pant
                     {
                         PBrand = "Thor",
@@ -344,7 +342,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 14,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tho_19_pan_sec_she-sky_sla.jpg",
                         SizeCat = "Youth",
-                    },                      
+                    },
                     new Pant
                     {
                         PBrand = "Fly",
@@ -356,7 +354,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 12,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_18_pan_kin_out_law-red_blu.jpg",
                         SizeCat = "Youth",
-                    },                      
+                    },
                     new Pant
                     {
                         PBrand = "Fly",
@@ -368,7 +366,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 7,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_18_pan_kin_out_law-blk_neo_pnk_hi_viz.jpg",
                         SizeCat = "Youth",
-                    },                       
+                    },
                     new Pant
                     {
                         PBrand = "O'Neal",
@@ -380,7 +378,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 17,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/o/one_16_pan_ele_aft-blu_red.jpg",
                         SizeCat = "Adult",
-                    },                     
+                    },
                     new Pant
                     {
                         PBrand = "Answer",
@@ -392,7 +390,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 12,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/a/ans_16_pan_alp-whi_red_blk.jpg",
                         SizeCat = "Adult",
-                    },                     
+                    },
                     new Pant
                     {
                         PBrand = "Fly",
@@ -404,7 +402,7 @@ namespace GearShopV2.Models
                         PQtyOnHand = 9,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_19_pan_lit_hyd-sea_por_whi.jpg",
                         SizeCat = "Adult",
-                    },                    
+                    },
                     new Pant
                     {
                         PBrand = "Fly",
@@ -495,7 +493,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 5,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/a/ans_18_hel_ar5_mips-aci_blu.jpg",
                     SizeCat = "Adult",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "Thor",
@@ -507,7 +505,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 13,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tho_19_hel_sec_hyp-gry_pnk.jpg",
                     SizeCat = "Adult",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "Answer",
@@ -519,7 +517,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 13,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/a/ans_18_hel_ar3_haz-gry_blu.jpg",
                     SizeCat = "Adult",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "Troy Lee",
@@ -531,7 +529,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 8,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tld_19_hel_se4_fac-yel_blu.jpg",
                     SizeCat = "Adult",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "Fox",
@@ -543,7 +541,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 12,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_19_hel_v1_mat-blu_wht.jpg",
                     SizeCat = "Youth",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "Thor",
@@ -555,7 +553,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 8,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tho_18_hel_sec_hyp-flo_aci_red.jpg",
                     SizeCat = "Youth",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "HJC",
@@ -567,7 +565,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 14,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/h/hjc_18_hel_cs_mx2_dak-blu.jpg",
                     SizeCat = "Youth",
-                },                 
+                },
                 new Helmet
                 {
                     HBrand = "HJC",
@@ -579,7 +577,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 14,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/h/hjc_18_hel_cs_mx2_dak-blu_wht_ora.jpg",
                     SizeCat = "Youth",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "Bell",
@@ -591,7 +589,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 18,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/b/bel_18_hel_mot_9_car_fle_mon_sho_tim_rep-grn_blk.jpg",
                     SizeCat = "Adult",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "O'Neal",
@@ -603,7 +601,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 11,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/o/one_19_hel_2_ser_sli-wht_blk.jpg",
                     SizeCat = "Adult",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "O'Neal",
@@ -615,7 +613,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 6,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/o/one_18_hel_5_ser_win_man-mul_wht.jpg",
                     SizeCat = "Youth",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "Fox",
@@ -627,7 +625,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 10,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_19_hel_v1_mot-red_wht.jpg",
                     SizeCat = "Adult",
-                },                  
+                },
                 new Helmet
                 {
                     HBrand = "Fox",
@@ -639,7 +637,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 10,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_19_hel_v1_mot-blu_gry.jpg",
                     SizeCat = "Adult",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "Leatt",
@@ -651,7 +649,7 @@ namespace GearShopV2.Models
                     HQtyOnHand = 14,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/l/lea_18_hel_gpx_5_5_v10-blu_wht.jpg",
                     SizeCat = "Adult",
-                },                
+                },
                 new Helmet
                 {
                     HBrand = "Leatt",
@@ -677,7 +675,7 @@ namespace GearShopV2.Models
                     SizeCat = "Youth",
                 });
 
-            context.SaveChanges();
+                context.SaveChanges();
 
 
 

@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using GearShopV2;
-using GearShopV2.Data;
+﻿using GearShopV2.Data;
 using GearShopV2.Models;
-using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace GearShopV2
 {
@@ -21,7 +14,7 @@ namespace GearShopV2
         public static void Main(string[] args)
         {
             var host = CreateWebHostBuilder(args).Build();
-            
+
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;

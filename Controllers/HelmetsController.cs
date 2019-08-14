@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using GearShopV2.Data;
+using GearShopV2.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using GearShopV2.Data;
-using GearShopV2.Models;
-using Microsoft.AspNetCore.Authorization;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GearShopV2.Controllers
 {
@@ -31,7 +30,7 @@ namespace GearShopV2.Controllers
             var helmets = from h in _context.Helmet
                           select h;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchString))
             {
                 helmets = helmets.Where(s => s.HBrand.Contains(searchString));
             }

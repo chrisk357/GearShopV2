@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GearShopV2.Data;
+using GearShopV2.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using GearShopV2.Models;
-using GearShopV2.Data;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.EntityFrameworkCore;
 
 namespace GearShopV2.Controllers
 {
@@ -28,7 +27,7 @@ namespace GearShopV2.Controllers
         //push update
         public async Task<IActionResult> Contacts()
         {
-                     
+
 
             var contacts = from c in _context.ContactUs
                            select c;
@@ -61,11 +60,11 @@ namespace GearShopV2.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> ContactUs([Bind("Id, contactName, contactEmail, contactMessage, Posted")] ContactUs contact)
         {
-            
+
             if (ModelState.IsValid)
             {
                 contact.Posted = DateTime.Now;
-              //  contact.Posted.Equals(DateTime.Now);
+                //  contact.Posted.Equals(DateTime.Now);
                 _context.Add(contact);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

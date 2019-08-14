@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using GearShopV2.Data;
+using GearShopV2.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using GearShopV2.Data;
-using GearShopV2.Models;
-using Microsoft.AspNetCore.Authorization;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 
 namespace GearShopV2.Controllers
@@ -27,13 +26,13 @@ namespace GearShopV2.Controllers
         {
             //Use LINQ to get a list of all colors
             IQueryable<string> sizeQuery = from j in _context.Jersey
-                                            orderby j.SizeCat
-                                            select j.SizeCat;
+                                           orderby j.SizeCat
+                                           select j.SizeCat;
 
             var jerseys = from j in _context.Jersey
                           select j;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchString))
             {
                 jerseys = jerseys.Where(s => s.JBrand.Contains(searchString));
             }
