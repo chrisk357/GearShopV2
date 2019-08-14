@@ -8,7 +8,7 @@
 
 
 
-@*@foreach (var item in Model.Contacts)
+@foreach (var item in Model.Contacts)
 {
     <table class="table table-active table-hover table-responsive-xl">
         <thead>
@@ -22,14 +22,14 @@
         <tbody>
             <tr>
                 <td>@Html.DisplayFor(ModelItem => item.Posted)</td>
-                <td>@Html.DisplayFor(modelItem => item.contactName) </td>
-                <td>@Html.DisplayFor(modelItem => item.contactEmail)</td>
-                <td>@Html.DisplayFor(ModelItem => item.contactMessage)</td>
+                <td>@Html.DisplayFor(modelItem => item.ContactName) </td>
+                <td>@Html.DisplayFor(modelItem => item.ContactEmail)</td>
+                <td>@Html.DisplayFor(ModelItem => item.ContactMessage)</td>
 
             </tr>
         </tbody>
     </table>
-}*@
+}
 
 
 @*<p>
