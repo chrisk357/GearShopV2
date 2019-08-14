@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -60,24 +61,18 @@ namespace GearShopV2.Controllers
             if (user == null)
                 return RedirectToAction("UserManagement", _userManager.Users);
 
-            var claims = await _userManager.GetClaimsAsync(user);
-            var vm = new EditUserViewModel() { Id = user.Id, Email = user.Email, UserName = user.UserName, UserClaims = claims.Select(c => c.Value).ToList() };
-
-            return View(vm);
+            return View(user);
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditUser(EditUserViewModel editUserViewModel)
+        public async Task<IActionResult> EditUser(string id, string UserName, string Email)
         {
-            var user = await _userManager.FindByIdAsync(editUserViewModel.Id);
+            var user = await _userManager.FindByIdAsync(id);
 
             if (user != null)
             {
-                user.Email = editUserViewModel.Email;
-                user.UserName = editUserViewModel.UserName;
-                //user.Birthdate = editUserViewModel.Birthdate;
-                //user.City = editUserViewModel.City;
-                //user.Country = editUserViewModel.Country;
+                user.Email = Email;
+                user.UserName = UserName;
 
                 var result = await _userManager.UpdateAsync(user);
 
@@ -86,10 +81,30 @@ namespace GearShopV2.Controllers
 
                 ModelState.AddModelError("", "User not updated, something went wrong.");
 
-                return View(editUserViewModel);
+                return View(user);
             }
 
             return RedirectToAction("UserManagement", _userManager.Users);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(string userId)
+        {
+            IdentityUser user = await _userManager.FindByIdAsync(userId);
+
+            if (user != null)
+            {
+                IdentityResult result = await _userManager.DeleteAsync(user);
+                if (result.Succeeded)
+                    return RedirectToAction("UserManagement");
+                else
+                    ModelState.AddModelError("", "Something went wrong while deleting this user.");
+            }
+            else
+            {
+                ModelState.AddModelError("", "This user can't be found");
+            }
+            return View("UserManagement", _userManager.Users);
         }
 
     }

@@ -49,6 +49,9 @@ namespace GearShopV2
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
             });
 
+            services.AddMemoryCache();
+            services.AddSession();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +60,7 @@ namespace GearShopV2
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseStatusCodePages();
                 app.UseDatabaseErrorPage();
             }
             else
@@ -69,6 +73,7 @@ namespace GearShopV2
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
             app.UseIdentity();
             app.UseAuthentication();
 
