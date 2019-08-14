@@ -74,6 +74,9 @@ namespace GearShopV2.Controllers
                 Id = user.Id,
                 Email = user.Email,
                 UserName = user.UserName,
+                Birthdate = user.Birthdate,
+                City = user.City,
+                State = user.State,
                 UserClaims = claims.Select(c => c.Value)
             .ToList()
             };
