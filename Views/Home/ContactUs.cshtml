@@ -1,7 +1,7 @@
 ﻿@model GearShopV2.Models.ContactUs
 @using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 
 
@@ -42,19 +42,19 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="contactName" class="control-label"></label>
-                <input asp-for="contactName" class="form-control" />
-                <span asp-validation-for="contactName" class="text-danger" style="font-weight:bold;"></span>
+                <label asp-for="ContactName" class="control-label"></label>
+                <input asp-for="ContactName" class="form-control" />
+                <span asp-validation-for="ContactName" class="text-danger" style="font-weight:bold;"></span>
             </div>
             <div class="form-group">
-                <label asp-for="contactEmail" class="control-label"></label>
-                <input asp-for="contactEmail" class="form-control" />
-                <span asp-validation-for="contactEmail" class="text-danger" style="font-weight:bold;"></span>
+                <label asp-for="ContactEmail" class="control-label"></label>
+                <input asp-for="ContactEmail" class="form-control" />
+                <span asp-validation-for="ContactEmail" class="text-danger" style="font-weight:bold;"></span>
             </div>
             <div class="form-group">
-                <label asp-for="contactMessage" class="control-label"></label>
-                <textarea asp-for="contactMessage" class="form-control" rows="10"></textarea>
-                <span asp-validation-for="contactMessage" class="text-danger" style="font-weight:bold;"></span>
+                <label asp-for="ContactMessage" class="control-label"></label>
+                <textarea asp-for="ContactMessage" class="form-control" rows="10"></textarea>
+                <span asp-validation-for="ContactMessage" class="text-danger" style="font-weight:bold;"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
