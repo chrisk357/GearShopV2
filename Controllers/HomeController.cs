@@ -8,16 +8,20 @@ using GearShopV2.Models;
 using GearShopV2.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using GearShopV2.ViewModels;
 
 namespace GearShopV2.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public HomeController(ApplicationDbContext context)
+        public HomeController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
 
@@ -42,28 +46,7 @@ namespace GearShopV2.Controllers
             return View(contactUsVM);
         }
 
-        public async Task<IActionResult> EditComments(string id)
-        {
-            var user = await _userManager.FindByIdAsync(id);
 
-            if (user == null)
-                return RedirectToAction("UserManagement", _userManager.Users);
-
-            var claims = await _userManager.GetClaimsAsync(user);
-            var vm = new EditUserViewModel()
-            {
-                Id = user.Id,
-                Email = user.Email,
-                UserName = user.UserName,
-                Birthdate = user.Birthdate,
-                City = user.City,
-                State = user.State,
-                UserClaims = claims.Select(c => c.Value)
-            .ToList()
-            };
-
-            return View(vm);
-        }
 
 
 
