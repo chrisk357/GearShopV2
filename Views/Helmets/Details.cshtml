@@ -1,16 +1,20 @@
 ﻿@model GearShopV2.Models.Helmet
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Helmets";
 }
 
-<h1>Details</h1>
+    <h1>
+        @Html.DisplayFor(model => model.HBrand)
+    </h1>
 
 <div>
-    <h4>Helmet</h4>
+    <h4>
+        @Html.DisplayFor(model => model.HModel)
+    </h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
+        @*<dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.HBrand)
         </dt>
         <dd class="col-sm-10">
@@ -21,7 +25,7 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.HModel)
-        </dd>
+        </dd>*@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.HColor)
         </dt>
@@ -34,20 +38,40 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.HSize)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HPrice)
-        </dt>
-        <dd class="col-sm-10">
-            $@Html.DisplayFor(model => model.HPrice)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HSalePrice)
-        </dt>
-        <dd class="col-sm-10">
-            $@Html.DisplayFor(model => model.HSalePrice)
-        </dd>
 
-    <!--
+
+        @if (Model.HSalePrice < Model.HPrice)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HPrice)
+            </dt>
+            <dd class="col-sm-10">
+                <del>
+                    $@Html.DisplayFor(model => model.HPrice)
+                </del>
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HSalePrice)
+            </dt>
+
+            <dd class="col-sm-10" style="color:forestgreen; font-weight:bolder">
+                $@Html.DisplayFor(model => model.HSalePrice)
+            </dd>
+        }
+        else
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.HPrice)
+            </dt>
+
+            <dd class="col-sm-10">
+                $@Html.DisplayFor(model => model.HPrice)
+            </dd>
+
+        }
+
+        <!--
     <dt class = "col-sm-2">
         @Html.DisplayNameFor(model => model.HQtyOnHand)
     </dt>
@@ -64,12 +88,12 @@
             @Html.DisplayFor(model => model.SizeCat)
         </dd>
         <!--
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HImageUrl)
-        </dt>
-        -->
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.HImageUrl)
+    </dt>
+    -->
         <dd class="col-sm-10">
-            <img src="@Html.DisplayFor(model => model.HImageUrl)"  />
+            <img src="@Html.DisplayFor(model => model.HImageUrl)" />
         </dd>
 
     </dl>
