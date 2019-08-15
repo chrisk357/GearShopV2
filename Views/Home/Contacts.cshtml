@@ -1,5 +1,13 @@
-﻿@model GearShopV2.Models.ContactUsViewModel
+﻿@using System.Security.Claims
+@using System.Threading.Tasks
+@using GearShopV2.Models
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity.EntityFrameworkCore
 
+@model GearShopV2.Models.ContactUsViewModel
+@inject SignInManager<ApplicationUser> SignInManager
 @{
     ViewData["Title"] = "Contacts";
 }
@@ -25,7 +33,14 @@
                 <td>@Html.DisplayFor(modelItem => item.ContactName) </td>
                 <td>@Html.DisplayFor(modelItem => item.ContactEmail)</td>
                 <td>@Html.DisplayFor(ModelItem => item.ContactMessage)</td>
-
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                }
             </tr>
         </tbody>
     </table>
@@ -33,50 +48,50 @@
 
 
 @*<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.contactName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.contactEmail)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.contactMessage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Posted)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.ContactUs) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.contactName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.contactEmail)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.contactMessage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Posted)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>*@
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.contactName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.contactEmail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.contactMessage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Posted)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model.ContactUs) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.contactName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.contactEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.contactMessage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Posted)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
 
 
 

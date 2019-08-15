@@ -42,6 +42,30 @@ namespace GearShopV2.Controllers
             return View(contactUsVM);
         }
 
+        public async Task<IActionResult> EditComments(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+                return RedirectToAction("UserManagement", _userManager.Users);
+
+            var claims = await _userManager.GetClaimsAsync(user);
+            var vm = new EditUserViewModel()
+            {
+                Id = user.Id,
+                Email = user.Email,
+                UserName = user.UserName,
+                Birthdate = user.Birthdate,
+                City = user.City,
+                State = user.State,
+                UserClaims = claims.Select(c => c.Value)
+            .ToList()
+            };
+
+            return View(vm);
+        }
+
+
 
         public IActionResult OnGetPartial() =>
             new PartialViewResult
