@@ -52,13 +52,13 @@
 
 
 
-                <b>Model:</b> @Html.DisplayFor(modelItem => item.HBrand) - @Html.DisplayFor(modelItem => item.HModel) <br>
+                <b><em>@Html.DisplayFor(modelItem => item.HBrand)</em></b> <em>@Html.DisplayFor(modelItem => item.HModel)</em> <br>
                 <b>Color:</b> @Html.DisplayFor(modelItem => item.HColor) <br>
                 <b>Size:</b> @Html.DisplayFor(modelItem => item.SizeCat) -  @Html.DisplayFor(modelItem => item.HSize) <br>
                 @if (item.HSalePrice < item.HPrice)
                 {
                     <b>Price:</b> @Html.DisplayFor(modelItem => item.HSalePrice)
-                    <span class="badge badge-success">ON SALE</span>
+                    <span class="badge badge-success" style="float:left" >SALE PRICE</span>
                 }
                 else
                 {
@@ -67,7 +67,7 @@
                 }
 
 
-                <i class="fas fa-cart-plus container-fluid" style="color:green; font-size:30px"></i>
+                <i class="fas fa-cart-plus container-fluid" style="color:green; font-size:20px"></i>
             </div>
         </div>
 
