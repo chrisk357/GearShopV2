@@ -20,7 +20,7 @@ namespace GearShopV2.Models
         //------------------------------------------
         // ------------------------------------
         //Just to see if it would work correctly Added postal code with displayaddress
-        [Display(Name = "Postal Code")]
+/*        [Display(Name = "Postal Code")]
         public string PostalCode { get; set; }
 
         public string DisplayAddress
@@ -37,15 +37,15 @@ namespace GearShopV2.Models
                 return string
                     .Format("{0} {1} {2}", dspCity, dspState, dspPostalCode);
             }
-        }
+        }*/
 
 
         //-------------------------------------------------------
         //Added below becuase of microsofot doc under section 
         //Add IdentityUser POCO navigation properties
-        public virtual ICollection<IdentityUserRole<int>>  Roles { get; } = new List<IdentityUserRole<int>>();
+/*      public virtual ICollection<IdentityUserRole<int>>  Roles { get; } = new List<IdentityUserRole<int>>();
         public virtual ICollection<IdentityUserClaim<int>> Claims { get; } = new List<IdentityUserClaim<int>>();
-        public virtual ICollection<IdentityUserLogin<int>> Logins { get; } = new List<IdentityUserLogin<int>>();
+        public virtual ICollection<IdentityUserLogin<int>> Logins { get; } = new List<IdentityUserLogin<int>>();*/
 
 
     }

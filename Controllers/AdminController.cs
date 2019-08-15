@@ -17,12 +17,15 @@ namespace GearShopV2.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         // private readonly SignInManager<ApplicationUser> _signInManager;
+        IUserClaimsPrincipalFactory<ApplicationUser> _claimsPrincipalFactory;
 
 
-        public AdminController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        public AdminController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager,
+            IUserClaimsPrincipalFactory<ApplicationUser> claimsPrincipalFactory)
         {
             _userManager = userManager;
             _roleManager = roleManager;
+            _claimsPrincipalFactory = claimsPrincipalFactory;
         }
         public IActionResult Index()
         {
@@ -232,7 +235,7 @@ namespace GearShopV2.Controllers
         }
 
         //Users in roles
-
+        
         public async Task<IActionResult> AddUserToRole(string roleId)
         {
             var role = await _roleManager.FindByIdAsync(roleId);
@@ -250,7 +253,7 @@ namespace GearShopV2.Controllers
             {
                 if (!await _userManager.IsInRoleAsync(user, role.Name))
                 {
-                    addUserToRoleViewModel.Users.Add(user);
+                 //   addUserToRoleViewModel.Users.Add(user);
                 }
             }
 
@@ -291,7 +294,7 @@ namespace GearShopV2.Controllers
             {
                 if (await _userManager.IsInRoleAsync(user, role.Name))
                 {
-                    addUserToRoleViewModel.Users.Add(user);
+                  //  addUserToRoleViewModel.Users.Add(user);
                 }
             }
 

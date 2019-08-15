@@ -50,17 +50,25 @@ namespace GearShopV2
 
             //Changed adddefaultidentity to addidentity and swapped out application user for the original IdentityUser param
             //Because changing adddefaultidentity to addidentity did not give me error when adding identityRole as param
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => { })
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+            //    .AddDefaultTokenProviders()
             //REMOVED THESE BECAUSE OF THE MIGRATION INSTRUCTIONS FROM MICROSOFT DOCS
             //THEY WERE NOT SHOWN IN THE COOKIBASED AUTHENTICATION EXAMPLES
-            //     .AddDefaultUI(UIFramework.Bootstrap4)
-            //     .AddRoles<IdentityRole>()
+           //      .AddDefaultUI(UIFramework.Bootstrap4)
+           //      .AddRoles<IdentityRole>();
             //
             //ALSO ADDED THIS STATEMENT FROM THE MICROSOFT EXAMPLE DOCS THE COOKIE
             //----------------------------------------------------
-            services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/LogIn");
+            // services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/LogIn");
+
+
+            //-------------------------------------------------
+            //ADDED THIS FROM THE IDENTITY DEEP DIVE COURSE
+            //--------------------------------------------
+            services.AddScoped<IUserStore<ApplicationUser>,
+            UserOnlyStore<ApplicationUser, ApplicationDbContext>>();
+
 
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
