@@ -16,15 +16,16 @@ namespace GearShopV2.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        // private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
         IUserClaimsPrincipalFactory<ApplicationUser> _claimsPrincipalFactory;
 
 
         public AdminController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager,
-            IUserClaimsPrincipalFactory<ApplicationUser> claimsPrincipalFactory)
+            SignInManager<ApplicationUser> signInManager, IUserClaimsPrincipalFactory<ApplicationUser> claimsPrincipalFactory)
         {
             _userManager = userManager;
             _roleManager = roleManager;
+            _signInManager = signInManager;
             _claimsPrincipalFactory = claimsPrincipalFactory;
         }
         public IActionResult Index()
