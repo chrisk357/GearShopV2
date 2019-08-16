@@ -1,10 +1,12 @@
-﻿using System;
+﻿using GearShopV2.Models;
+using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace GearShopV2.ViewModels
 {
-    public class EditUserViewModel
+    public class EditUserViewModel : IdentityUser
     {
 
 
@@ -13,6 +15,8 @@ namespace GearShopV2.ViewModels
         [Required(ErrorMessage = "Please enter the user name")]
         [Display(Name = "User name")]
         public string UserName { get; set; }
+
+        public string Role { get; set; }
 
         [Required(ErrorMessage = "Please enter the user email")]
         public string Email { get; set; }
