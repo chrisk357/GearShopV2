@@ -58,7 +58,8 @@
                 @if (item.HSalePrice < item.HPrice)
                 {
                     <b>Price:</b> @Html.DisplayFor(modelItem => item.HSalePrice)
-                    <span class="badge badge-success" style="float:left" >SALE PRICE</span>
+                    <div class="spinner-grow text-success"></div>
+                    <span class="badge badge-pill badge-success" style="float:left" >SALE PRICE</span>
                 }
                 else
                 {
