@@ -20,6 +20,10 @@ namespace GearShopV2.ViewModels
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+
+
+
+
         [Required(ErrorMessage = "Please enter the birth date")]
         [Display(Name = "Birth date")]
         [DataType(DataType.Date)]

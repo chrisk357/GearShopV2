@@ -49,8 +49,8 @@ namespace GearShopV2
             //Changed adddefaultidentity to addidentity and swapped out application user for the original IdentityUser param
 
             services.AddDefaultIdentity<ApplicationUser>()
-                .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddRoles<IdentityRole>()
+                .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddAuthentication().AddFacebook(facebookOptions =>
@@ -59,13 +59,27 @@ namespace GearShopV2
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
             });
 
-           // services.AddMemoryCache();
-           // services.AddSession();
+
+
+
+
+
+            // services.AddMemoryCache();
+            // services.AddSession();
 
         }
 
+
+
+
+
+
+
+
+
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
         {
             if (env.IsDevelopment())
             {
@@ -82,7 +96,7 @@ namespace GearShopV2
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-           // app.UseSession();
+            // app.UseSession();
             app.UseIdentity();
             app.UseAuthentication();
 
@@ -92,6 +106,35 @@ namespace GearShopV2
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            CreateUserRoles(serviceProvider).Wait();
+        }
+
+         private async Task CreateUserRoles(IServiceProvider serviceProvider)
+        {
+            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+            IdentityResult roleResult;
+            //Adding Admin Role
+            var roleCheck = await RoleManager.RoleExistsAsync("Admin");
+            if (!roleCheck)
+            {
+                //create the roles and seed them to the database
+                roleResult = await RoleManager.CreateAsync(new IdentityRole("Admin"));
+            }
+
+            var roleCheck2 = await RoleManager.RoleExistsAsync("User");
+            if (!roleCheck2)
+            {
+                //create the roles and seed them to the database
+                roleResult = await RoleManager.CreateAsync(new IdentityRole("User"));
+            }
+
+            //Assign Admin role to the main User here we have given our newly registered 
+            //login id for Admin management
+            ApplicationUser user = await UserManager.FindByEmailAsync("admin@admin.com");
+            await UserManager.AddToRoleAsync(user, "Admin");
         }
     }
 }

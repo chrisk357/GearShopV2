@@ -74,19 +74,33 @@
                         </li>
 
                         @*@if (SignInManager.IsSignedIn(User))
-                        {
-                            <li class="nav-item small">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="AddUser">Add User</a>
-                            </li>
-                            <li class="nav-item small">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="EditUser">Edit User</a>
-                            </li>
-                            <li class="nav-item small">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="UserManagement">Users</a>
-                            </li>
-                        }*@
+                            {
+                                <li class="nav-item small">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="AddUser">Add User</a>
+                                </li>
+                                <li class="nav-item small">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="EditUser">Edit User</a>
+                                </li>
+                                <li class="nav-item small">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="UserManagement">Users</a>
+                                </li>
+                            }*@
 
-                        @if (SignInManager.IsSignedIn(User))
+                        @*@if (SignInManager.IsSignedIn(User))
+                            {
+                                <div class="dropdown">
+                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+                                        Admin
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="UserManagement">Users</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="AddUser">Add User</a>
+                                    </div>
+                                </div>
+                            }*@
+
+
+                        @if (User.IsInRole("Admin"))
                         {
                             <div class="dropdown">
                                 <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
@@ -98,6 +112,9 @@
                                 </div>
                             </div>
                         }
+
+
+
 
 
                     </ul>
