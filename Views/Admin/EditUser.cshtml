@@ -1,9 +1,8 @@
 ﻿@model GearShopV2.ViewModels.EditUserViewModel
 
-<h2>Edit user</h2>
+<h1 class="myHeaders">Edit user</h1>
 
 <form asp-controller="Admin" asp-action="EditUser" method="post" class="form-horizontal" role="form">
-    <h4>You can change the user details below</h4>
     <hr />
     <div asp-validation-summary="All" class="text-danger"></div>
 
@@ -55,12 +54,37 @@
         </div>
     </div>
 
+
+    <td>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">Admin
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">Employee
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">User
+            </label>
+        </div>
+    </td>
+
+
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-primary" value="Save user" />
             <a asp-action="UserManagement" class="btn btn-primary">Cancel</a>
         </div>
     </div>
+
+
+
+
+
 </form>
 
 

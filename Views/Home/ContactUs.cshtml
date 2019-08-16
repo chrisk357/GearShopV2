@@ -43,17 +43,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ContactName" class="control-label"></label>
-                <input asp-for="ContactName" class="form-control" />
+                <input asp-for="ContactName" class="form-control" placeholder="Full Name"/>
                 <span asp-validation-for="ContactName" class="text-danger" style="font-weight:bold;"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ContactEmail" class="control-label"></label>
-                <input asp-for="ContactEmail" class="form-control" />
+                <input asp-for="ContactEmail" class="form-control" placeholder="Email"/>
                 <span asp-validation-for="ContactEmail" class="text-danger" style="font-weight:bold;"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ContactMessage" class="control-label"></label>
-                <textarea asp-for="ContactMessage" class="form-control" rows="10"></textarea>
+                <textarea asp-for="ContactMessage" class="form-control" rows="10" placeholder="Leave your message here"></textarea>
                 <span asp-validation-for="ContactMessage" class="text-danger" style="font-weight:bold;"></span>
             </div>
             <div class="form-group">

@@ -1,6 +1,6 @@
 ﻿@model AddUserViewModel
 
-<h2>Add User</h2>
+<h1 class="myHeaders">Add User</h1>
 
 <form asp-controller="Admin" asp-action="AddUser" method="post" class="form-horizontal" role="form">
     <h4>Enter the user details below</h4>
@@ -60,5 +60,26 @@
             <input type="submit" class="btn btn-primary" value="Create user" />
         </div>
     </div>
+
+
+    <td>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">Admin
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">Employee
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" value="">User
+            </label>
+        </div>
+    </td>
+
+
 </form>
         <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index">Home</a>

@@ -81,6 +81,10 @@ namespace GearShopV2.Controllers
         }
 
 
+
+
+
+
         private bool ContactExists(int id)
         {
             return _context.ContactUs.Any(e => e.Id == id);
