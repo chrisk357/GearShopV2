@@ -13,6 +13,15 @@
     <None Remove="Auth\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20190814050447_updated application user.cs" />
+    <Compile Remove="Data\Migrations\20190814050447_updated application user.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190816165021_Updated Gear.cs" />
+    <Compile Remove="Data\Migrations\20190816165021_Updated Gear.Designer.cs" />
+    <Compile Remove="Data\Migrations\20190816165238_dbnamechange.cs" />
+    <Compile Remove="Data\Migrations\20190816165238_dbnamechange.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />

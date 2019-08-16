@@ -24,7 +24,7 @@ namespace GearShopV2.Models
                     new Jersey
                     {
                         JBrand = "MSR",
-                        JModel = "NXT Jersey 2019",
+                        JModel = "NXT 2019",
                         JColor = "Blue/Red",
                         JSize = "L",
                         JPrice = 14.99,
@@ -32,11 +32,59 @@ namespace GearShopV2.Models
                         JQtyOnHand = 14,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/msr_19_jer_nxt-blu_red.jpg",
                         SizeCat = "Youth",
+                    },                    
+                    new Jersey
+                    {
+                        JBrand = "Klim",
+                        JModel = "XC Lite",
+                        JColor = "Red/Blue",
+                        JSize = "XL",
+                        JPrice = 39.99,
+                        JSalePrice = 39.99,
+                        JQtyOnHand = 14,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/k/kli_19_jer_xc_lit-red_blu.jpg",
+                        SizeCat = "Youth",
+                    },                    
+                    new Jersey
+                    {
+                        JBrand = "Klim",
+                        JModel = "XC Lite",
+                        JColor = "Purple",
+                        JSize = "XXL",
+                        JPrice = 39.99,
+                        JSalePrice = 39.99,
+                        JQtyOnHand = 13,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/k/kli_19_jer_xc_lit-pur.jpg",
+                        SizeCat = "Youth",
+                    },                   
+                    new Jersey
+                    {
+                        JBrand = "Fox",
+                        JModel = "360 Murc",
+                        JColor = "Green",
+                        JSize = "XS",
+                        JPrice = 59.95,
+                        JSalePrice = 44.96,
+                        JQtyOnHand = 7,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_19_jer_360_mur-grn.jpg",
+                        SizeCat = "Adult",
+                    },                    
+                    new Jersey
+                    {
+                        JBrand = "Fox",
+                        JModel = "360 Murc",
+                        JColor = "Blue Steel",
+                        JSize = "S",
+                        JPrice = 59.95,
+                        JSalePrice = 44.96,
+                        JQtyOnHand = 5,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_19_jer_360_mur-blu_ste.jpg",
+                        SizeCat = "Adult",
                     },
                     new Jersey
                     {
                         JBrand = "MSR",
-                        JModel = "NXT Jersey 2019",
+                        JModel = "NXT 2019",
                         JColor = "Red/Black",
                         JSize = "S",
                         JPrice = 14.99,
@@ -48,7 +96,7 @@ namespace GearShopV2.Models
                     new Jersey
                     {
                         JBrand = "MSR",
-                        JModel = "Axxis Jersey 19.5",
+                        JModel = "Axxis 19.5",
                         JColor = "Blue/Yellow",
                         JSize = "XS",
                         JPrice = 17.95,
@@ -60,7 +108,7 @@ namespace GearShopV2.Models
                     new Jersey
                     {
                         JBrand = "MSR",
-                        JModel = "Axxis Jersey 19.5",
+                        JModel = "Axxis 19.5",
                         JColor = "Black/Flo Green",
                         JSize = "XS",
                         JPrice = 17.95,
@@ -204,7 +252,7 @@ namespace GearShopV2.Models
                     new Jersey
                     {
                         JBrand = "Fly",
-                        JModel = "F-16 Jersey 2019",
+                        JModel = "F-16 2019",
                         JColor = "Neon Pink/Black/Grey",
                         JSize = "XL",
                         JPrice = 21.99,
@@ -402,6 +450,78 @@ namespace GearShopV2.Models
                         PQtyOnHand = 9,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_19_pan_lit_hyd-sea_por_whi.jpg",
                         SizeCat = "Adult",
+                    },                    
+                    new Pant
+                    {
+                        PBrand = "Moose",
+                        PModel = "M1 2018",
+                        PColor = "Hi-Viz/Magenta",
+                        PSize = "34",
+                        PPrice = 109.95,
+                        PSalePrice = 84.95,
+                        PQtyOnHand = 13,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/moo_18_pan_m1-hi_viz_mag.jpg",
+                        SizeCat = "Adult",
+                    },                    
+                    new Pant
+                    {
+                        PBrand = "Moose",
+                        PModel = "M1 2018",
+                        PColor = "Green/Black",
+                        PSize = "30",
+                        PPrice = 109.95,
+                        PSalePrice = 84.95,
+                        PQtyOnHand = 7,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/moo_18_pan_m1-hi_viz_mag.jpg",
+                        SizeCat = "Adult",
+                    },                    
+                    new Pant
+                    {
+                        PBrand = "Seven",
+                        PModel = "Annex Exo",
+                        PColor = "Black/Aqua",
+                        PSize = "28",
+                        PPrice = 98.00,
+                        PSalePrice = 98.00,
+                        PQtyOnHand = 7,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/s/sev_19_pan_ann_exo-blk_aqu.jpg",
+                        SizeCat = "Adult",
+                    },                   
+                    new Pant
+                    {
+                        PBrand = "Seven",
+                        PModel = "Annex Exo",
+                        PColor = "Blue",
+                        PSize = "38",
+                        PPrice = 98.00,
+                        PSalePrice = 98.00,
+                        PQtyOnHand = 10,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/s/sev_19_pan_ann_exo-blu.jpg",
+                        SizeCat = "Adult",
+                    },                    
+                    new Pant
+                    {
+                        PBrand = "Leatt",
+                        PModel = "GPX 5.5 I.K.S",
+                        PColor = "Black/Lime",
+                        PSize = "26",
+                        PPrice = 179.99,
+                        PSalePrice = 143.99,
+                        PQtyOnHand = 9,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/l/lea_19_pan_gpx_5_5_iks-blk_lim.jpg",
+                        SizeCat = "Youth",
+                    },                    
+                    new Pant
+                    {
+                        PBrand = "Leatt",
+                        PModel = "GPX 5.5 I.K.S",
+                        PColor = "Ink/Blue",
+                        PSize = "28",
+                        PPrice = 179.99,
+                        PSalePrice = 143.99,
+                        PQtyOnHand = 9,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/l/lea_19_pan_gpx_5_5_iks-blk_lim.jpg",
+                        SizeCat = "Youth",
                     },
                     new Pant
                     {
