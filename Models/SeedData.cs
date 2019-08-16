@@ -469,6 +469,78 @@ namespace GearShopV2.Models
                     HQtyOnHand = 16,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_18_hel_tox_mips_res-blk_neo_pnk.jpg",
                     SizeCat = "Adult",
+                },            
+                new Helmet
+                {
+                    HBrand = "MSR",
+                    HModel = "SC1 Grit",
+                    HColor = "Matte Black/Flo Green",
+                    HSize = "M",
+                    HPrice = 109.99,
+                    HSalePrice = 84.99,
+                    HQtyOnHand = 21,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/m/msr_19_hel_sc1_gri-mat_blk_flo_grn.jpg",
+                    SizeCat = "Adult",
+                },                
+                new Helmet
+                {
+                    HBrand = "Fly",
+                    HModel = "Kinetic Burnish",
+                    HColor = "Neon Pink/WHite",
+                    HSize = "L",
+                    HPrice = 109.95,
+                    HSalePrice = 82.46,
+                    HQtyOnHand = 11,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_18_hel_kin_bur-neo_pnk_wht_pur.jpg",
+                    SizeCat = "Adult",
+                },                
+                new Helmet
+                {
+                    HBrand = "Leatt",
+                    HModel = "GPX 5.5 V15",
+                    HColor = "White/Red",
+                    HSize = "XXL",
+                    HPrice = 259.99,
+                    HSalePrice = 259.99,
+                    HQtyOnHand = 9,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/l/lea_17_hel_gpx_5_5_v15-wht_red.jpg",
+                    SizeCat = "Adult",
+                },                
+                new Helmet
+                {
+                    HBrand = "LS2",
+                    HModel = "Subverter MX470",
+                    HColor = "Bomber Hi-Vis Yellow",
+                    HSize = "S",
+                    HPrice = 219.98,
+                    HSalePrice = 219.98,
+                    HQtyOnHand = 6,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/l/ls2_18_hel_sub_mx_470-bom_hi_viz_yel.jpg",
+                    SizeCat = "Youth",
+                },                
+                new Helmet
+                {
+                    HBrand = "LS2",
+                    HModel = "Subverter MX470",
+                    HColor = "Blade Laser Blue",
+                    HSize = "M",
+                    HPrice = 219.98,
+                    HSalePrice = 219.98,
+                    HQtyOnHand = 6,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/l/ls2_19_hel_sub_mx470-bla_las_blu_kro.jpg",
+                    SizeCat = "Youth",
+                },                
+                new Helmet
+                {
+                    HBrand = "LS2",
+                    HModel = "Fast V2 MX437",
+                    HColor = "",
+                    HSize = "XL",
+                    HPrice = 139.98,
+                    HSalePrice = 139.98,
+                    HQtyOnHand = 12,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/l/ls2_18_hel_fas_mx_437-str_blu_red.jpg",
+                    SizeCat = "Youth",
                 },
                 new Helmet
                 {
