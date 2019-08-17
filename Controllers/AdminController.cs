@@ -13,7 +13,7 @@ namespace GearShopV2.Controllers
     public class AdminController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        // private readonly SignInManager<ApplicationUser> _signInManager;
+        //private readonly SignInManager<ApplicationUser> _signInManager;
 
 
         public AdminController(UserManager<ApplicationUser> userManager)
