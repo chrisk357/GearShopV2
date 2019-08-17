@@ -111,14 +111,14 @@ namespace GearShopV2.Controllers
             return RedirectToAction("UserManagement", _userManager.Users);
         }
 
-        [HttpPost]
+        [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteUser(string userId)
         {
             var user = await _userManager.FindByIdAsync(userId);
 
             if (user != null)
             {
-                IdentityResult result = await _userManager.DeleteAsync(user);
+                var result = await _userManager.DeleteAsync(user);
                 if (result.Succeeded)
                     return RedirectToAction("UserManagement");
                 else
