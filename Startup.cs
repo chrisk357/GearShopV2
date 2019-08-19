@@ -135,6 +135,9 @@ namespace GearShopV2
             //login id for Admin management
             ApplicationUser user = await UserManager.FindByEmailAsync("admin@admin.com");
             await UserManager.AddToRoleAsync(user, "Admin");
+
+            ApplicationUser user1 = await UserManager.FindByEmailAsync("chrisk357@gmail.com");
+            await UserManager.AddToRoleAsync(user1, "User");
         }
     }
 }
