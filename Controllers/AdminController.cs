@@ -60,6 +60,28 @@ namespace GearShopV2.Controllers
             return View(addUserViewModel);
         }
 
+
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user != null)
+            {
+                var result = await _userManager.DeleteAsync(user);
+                if (result.Succeeded)
+                    return RedirectToAction("UserManagement");
+                else
+                    ModelState.AddModelError("", "Something went wrong while deleting this user.");
+            }
+            else
+            {
+                ModelState.AddModelError("", "This user can't be found");
+            }
+            return View("UserManagement", _userManager.Users);
+        }
+
         public async Task<IActionResult> EditUser(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
@@ -110,25 +132,6 @@ namespace GearShopV2.Controllers
             return RedirectToAction("UserManagement", _userManager.Users);
         }
 
-        [HttpPost, ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteUser(string userId)
-        {
-            var user = await _userManager.FindByIdAsync(userId);
-
-            if (user != null)
-            {
-                var result = await _userManager.DeleteAsync(user);
-                if (result.Succeeded)
-                    return RedirectToAction("UserManagement");
-                else
-                    ModelState.AddModelError("", "Something went wrong while deleting this user.");
-            }
-            else
-            {
-                ModelState.AddModelError("", "This user can't be found");
-            }
-            return View("UserManagement", _userManager.Users);
-        }
 
     }
 }
