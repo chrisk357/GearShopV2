@@ -64,7 +64,7 @@ namespace GearShopV2.Controllers
         {
             return View();
         }
-        [Authorize]
+
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> ContactUs([Bind("Id, ContactName, ContactEmail, ContactMessage, Posted")] ContactUs contact)
         {
@@ -79,8 +79,36 @@ namespace GearShopV2.Controllers
             }
             return View(contact);
         }
+        [Authorize(Roles = "Admin")]
+        // GET: Helmets/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var contact = await _context.ContactUs
+                .FirstOrDefaultAsync(c => c.Id == id);
+            if (contact == null)
+            {
+                return NotFound();
+            }
 
+            return View(contact);
+        }
+
+        [Authorize(Roles = "Admin")]
+        // POST: Helmets/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var contact = await _context.ContactUs.FindAsync(id);
+            _context.ContactUs.Remove(contact);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
 
 
 
