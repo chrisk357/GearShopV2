@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using GearShopV2.Models;
 
 namespace GearShopV2.Controllers
-{
+{[Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

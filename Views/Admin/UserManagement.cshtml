@@ -1,4 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity.EntityFrameworkCore
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authorization
 @model IEnumerable<ApplicationUser>
 
 <h1 class="myHeaders">User Management</h1>
@@ -9,7 +12,7 @@
 }
 else
 {
-<table class="table table-condensed table-bordered table-active table-dark" header header-content="User Management">
+<table class="table table-condensed table-bordered table-active table-dark container-fluid" header header-content="User Management">
     <tr>
         <!--<th>User ID</th>-->
         <th>User Name</th>
@@ -30,7 +33,8 @@ else
     <td>@user.State</td>
     <td>@user.Birthdate</td>
     <td>
-        <div class="form-check">
+
+        @*<div class="form-check">
             <label class="form-check-label">
                 <input type="checkbox" class="form-check-input" value="">Admin
             </label>
@@ -44,13 +48,12 @@ else
             <label class="form-check-label">
                 <input type="checkbox" class="form-check-input" value="">User
             </label>
-        </div>
+        </div>*@
     </td>
     <td>
         <form asp-action="DeleteUser" asp-route-id="@user.Id" method="post">
             <a class="btn btn-sm btn-primary" asp-action="EditUser" asp-route-id="@user.Id">Edit</a>
             
-            <a class="btn btn-sm btn-primary" asp-action="DeleteUser" asp-route-id="@user.Id">Delete</a>
 
             <button type="submit" onclick="return confirm('Do you really want to delete this user?');" class="btn btn-sm btn-danger">
                 Delete
