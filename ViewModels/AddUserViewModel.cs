@@ -21,7 +21,7 @@ namespace GearShopV2.ViewModels
         public string Password { get; set; }
 
 
-
+        
 
 
         [Required(ErrorMessage = "Please enter the birth date")]

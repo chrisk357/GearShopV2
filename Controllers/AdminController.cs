@@ -45,6 +45,7 @@ namespace GearShopV2.Controllers
                 Birthdate = addUserViewModel.Birthdate,
                 City = addUserViewModel.City,
                 State = addUserViewModel.State
+                
             };
 
             IdentityResult result = await _userManager.CreateAsync(user, addUserViewModel.Password);
@@ -98,6 +99,7 @@ namespace GearShopV2.Controllers
                 Birthdate = user.Birthdate,
                 City = user.City,
                 State = user.State,
+                
                 UserClaims = claims.Select(c => c.Value)
             .ToList()
             };

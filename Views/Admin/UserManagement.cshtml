@@ -28,6 +28,8 @@ else
             <th>Admin</th>
             <th>Actions</th>
         </tr>
+
+
         @foreach (ApplicationUser user in Model)
         {
             <tr>
@@ -38,7 +40,7 @@ else
                 <td>@user.State</td>
                 <td>@user.Birthdate</td>
                 <td>
-                    
+                    @*@user.roles*@
 
                     @*<div class="form-check">
                             <label class="form-check-label">
