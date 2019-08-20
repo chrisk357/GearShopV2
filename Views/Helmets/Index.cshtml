@@ -19,8 +19,8 @@
 
 
 @*<div>
-    <a asp-controller="Home" asp-action="Index"><i class="fas fa-backward"></i></a>
-</div>*@
+        <a asp-controller="Home" asp-action="Index"><i class="fas fa-backward"></i></a>
+    </div>*@
 
 
 
@@ -58,12 +58,12 @@
                 @if (item.HSalePrice < item.HPrice)
                 {
                     <b>Price:</b> @Html.DisplayFor(modelItem => item.HSalePrice)
-                   <div class="">
+                    <div class="">
 
-                            <span class="d-flex justify-content-center badge badge-pill badge-success">SALE PRICE</span><br />
-                            @*<div class="d-inline-block spinner-grow text-success"></div>*@
+                        @* <span class="d-flex justify-content-center badge badge-pill badge-success">SALE PRICE</span><br />
+                            <div class="d-inline-block spinner-grow text-success"></div>*@
 
-                        </div>
+                    </div>
 
 
 
@@ -73,9 +73,9 @@
                 else
                 {
                     <b>Price:</b>
-                    @Html.DisplayFor(modelItem => item.HPrice) <br /><br />
+                    @Html.DisplayFor(modelItem => item.HPrice) <br />
                 }
-               
+
                 <div class="align-items-end position-static">
                     <div class="d-flex justify-content-center align-items-end">
                         <div class="flex-fill align-content-end">
@@ -88,8 +88,26 @@
                             <button class="btn btn-secondary" style="height:100%"><i class="fa fa-share justify-content-center" style="color:black"></i></button>
 
                         </div>
-                    </div>
+                    </div>   <br />
                 </div>
+
+
+                @if (item.HSalePrice < item.HPrice)
+                {<div class="">
+
+                        <span class="d-flex justify-content-center badge badge-pill badge-success">SALE PRICE</span>
+                        @*<div class="d-inline-block spinner-grow text-success"></div>*@
+
+                    </div>
+
+
+
+
+
+                }
+
+
+
 
 
 
@@ -104,5 +122,5 @@
 </div>
 
 @*<div>
-    <a asp-controller="Home" asp-action="Index"><i class="fas fa-backward"></i></a>
-</div>*@
+        <a asp-controller="Home" asp-action="Index"><i class="fas fa-backward"></i></a>
+    </div>*@
