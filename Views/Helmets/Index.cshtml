@@ -58,8 +58,10 @@
                 @if (item.HSalePrice < item.HPrice)
                 {
                     <b>Price:</b> @Html.DisplayFor(modelItem => item.HSalePrice)
-                    <div class="spinner-grow text-success"></div>
-                    <span class="badge badge-pill badge-success">SALE PRICE</span>
+            <div class="container">
+                <span class="badge badge-pill badge-success">SALE PRICE</span>                        <div class="spinner-grow text-success"></div>
+
+            </div>
                 }
                 else
                 {
@@ -67,8 +69,9 @@
                     @Html.DisplayFor(modelItem => item.HPrice) <br />
                 }
 
-
-                <button class="btn btn-success small"><i class="fas fa-cart-plus container-fluid" style="color:green"></i></button>
+                <div class="mx-auto">
+                <button class="btn btn-success justify-content-center" style="width:50px; height:40px"><i class="fas fa-cart-plus justify-content-center" style="color:green"></i></button>
+                </div>
             </div>
         </div>
 
