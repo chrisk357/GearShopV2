@@ -58,10 +58,17 @@
                 @if (item.HSalePrice < item.HPrice)
                 {
                     <b>Price:</b> @Html.DisplayFor(modelItem => item.HSalePrice)
-            <div class="container">
-                <span class="badge badge-pill badge-success">SALE PRICE</span>                        <div class="spinner-grow text-success"></div>
+                   <div class="container mt-1">
 
-            </div>
+                            <span class="d-inline-block badge badge-pill badge-success">SALE PRICE</span>
+                            <div class="d-inline-block spinner-grow text-success"></div>
+
+                        </div>
+
+
+
+
+
                 }
                 else
                 {
@@ -69,9 +76,24 @@
                     @Html.DisplayFor(modelItem => item.HPrice) <br />
                 }
 
-                <div class="mx-auto">
-                <button class="btn btn-success justify-content-center" style="width:50px; height:40px"><i class="fas fa-cart-plus justify-content-center" style="color:green"></i></button>
+                <div class="d-inline-flex">
+                    <div class="">
+                        <button class=" btn btn-success" style="height:100%"><i class="fas fa-cart-plus justify-content-center" style="color:green"></i></button>
+                    </div>
+                    <div class="">
+                        <button class=" btn btn-info" style="height:100%"><i class="fa fa-heart justify-content-center" style="color:red"></i></button>
+                    </div>
+                    <div class="">
+                        <button class="btn btn-secondary" style="height:100%"><i class="fa fa-share justify-content-center"  style="color:black"></i></button>
+
+                    </div>
                 </div>
+
+
+
+                @*<div class="">
+                        <button class="d-inline-block btn btn-success justify-content-center" style="width:50px; height:40px"><i class="fas fa-cart-plus justify-content-center" style="color:green"></i></button>
+                    </div>*@
             </div>
         </div>
 
