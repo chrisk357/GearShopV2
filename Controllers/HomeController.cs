@@ -35,6 +35,7 @@ namespace GearShopV2.Controllers
                      
 
             var contacts = from c in _context.ContactUs
+                           orderby c.Posted descending
                            select c;
 
 
@@ -50,12 +51,12 @@ namespace GearShopV2.Controllers
 
 
 
-        public IActionResult OnGetPartial() =>
+/*        public IActionResult OnGetPartial() =>
             new PartialViewResult
             {
                 ViewName = "_Contacts",
                 //ViewData = Contacts,
-            };
+            };*/
 
 
 
@@ -65,6 +66,7 @@ namespace GearShopV2.Controllers
             return View();
         }
 
+        // POST: Contacts
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> ContactUs([Bind("Id, ContactName, ContactEmail, ContactMessage, Posted")] ContactUs contact)
         {
@@ -75,32 +77,30 @@ namespace GearShopV2.Controllers
               //  contact.Posted.Equals(DateTime.Now);
                 _context.Add(contact);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Contacts));
             }
             return View(contact);
         }
-        [Authorize(Roles = "Admin")]
+
         // GET: Contacts/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
             var contact = await _context.ContactUs
                 .FirstOrDefaultAsync(c => c.Id == id);
-            
             if (contact == null)
             {
                 return NotFound();
             }
-
             return View(contact);
         }
 
+        // POST: Contacts/Delete/5
         [Authorize(Roles = "Admin")]
-        // POST: Helmets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -110,9 +110,7 @@ namespace GearShopV2.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Contacts));
         }
-
-
-
+               
 
         private bool ContactExists(int id)
         {
