@@ -110,7 +110,7 @@ namespace GearShopV2
             CreateUserRoles(serviceProvider).Wait();
         }
 
-         private async Task CreateUserRoles(IServiceProvider serviceProvider)
+           private async Task CreateUserRoles(IServiceProvider serviceProvider)
         {
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
