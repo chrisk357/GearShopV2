@@ -20,11 +20,13 @@ namespace GearShopV2.Controllers
             _context = context;
         }
 
+
+
+
         // GET: Jerseys
         public async Task<IActionResult> Index(string sizeCatergory, string searchString)
-
         {
-            //Use LINQ to get a list of all colors
+            //Use LINQ to get a list of all sizes
             IQueryable<string> sizeQuery = from j in _context.Jersey
                                            orderby j.SizeCat
                                            select j.SizeCat;
@@ -76,6 +78,8 @@ namespace GearShopV2.Controllers
 
             return View(jersey);
         }
+
+
 
 
         [Authorize(Roles = "Admin")]
@@ -156,6 +160,8 @@ namespace GearShopV2.Controllers
             }
             return View(jersey);
         }
+
+
 
         [Authorize(Roles = "Admin")]
         // GET: Jerseys/Delete/5

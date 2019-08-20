@@ -14,6 +14,105 @@ namespace GearShopV2.Models
                 serviceProvider.GetRequiredService
                     <DbContextOptions<ApplicationDbContext>>()))
             {
+
+                //comments TODO NEED DATES 
+                if(context.ContactUs.Any())
+                {
+                    return; 
+                }
+                context.ContactUs.AddRange(
+                    new ContactUs
+                    {
+                        Posted = new DateTime(8/2/2019),
+                        ContactName = "Jeffrey Smith",
+                        ContactEmail = "Jsmith382@ymail.com",
+                        ContactMessage = "Finally used your site and have to say I really enjoyed experience very cool and neat bud keep it up braaap!",
+                    },                    
+                    new ContactUs
+                    {
+                        ContactName = "Sam Hunt",
+                        ContactEmail = "Shuntayy@ymail.com",
+                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "normal distribution of letters, as opposed to 'Content here, content here', making it look like readable English.",
+                    },                    
+                    new ContactUs
+                    {
+                        ContactName = "Josh Grant",
+                        ContactEmail = "JDaddy33@gmail.com",
+                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    },                    
+                    new ContactUs
+                    {
+                        ContactName = "Grant Langston",
+                        ContactEmail = "Zulluwarrior@gmail.com",
+                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    },                    
+                    new ContactUs
+                    {
+                        ContactName = "Ryan Dungey",
+                        ContactEmail = "Dungey5@rocketmail.com",
+                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    },                    
+                    new ContactUs
+                    {
+                        ContactName = "Marvin Musquin",
+                        ContactEmail = "Muskymusq@rocketmail.com",
+                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    },                    
+                    new ContactUs
+                    {
+                        ContactName = "Jeremy Mcgrath",
+                        ContactEmail = "Showtime1@gmail.com",
+                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    },                   
+                    new ContactUs
+                    {
+                        ContactName = "Trey Canard",
+                        ContactEmail = "Treybay41@gmail.com",
+                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    },                    
+                    new ContactUs
+                    {
+                        ContactName = "Ezra Lusk",
+                        ContactEmail = "Yogilusk@gmail.com",
+                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    },                    
+                    new ContactUs
+                    {
+                        ContactName = "Kevin Windham",
+                        ContactEmail = "Familyman14@ymail.com",
+                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    },                    
+                    new ContactUs
+                    {
+                        ContactName = "Ricky Carmichael",
+                        ContactEmail = "Rc4goat@ymail.com",
+                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    });
+
+
+
+
+
                 //look for jerseys
                 if (context.Jersey.Any())
                 {
