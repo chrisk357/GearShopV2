@@ -26,34 +26,39 @@ namespace GearShopV2.Models
                         Posted = new DateTime(8/2/2019),
                         ContactName = "Jeffrey Smith",
                         ContactEmail = "Jsmith382@ymail.com",
-                        ContactMessage = "Finally used your site and have to say I really enjoyed experience very cool and neat bud keep it up braaap!",
+                        ContactMessage = "Finally used your site and have to say I really enjoyed experience very cool " +
+                        "and neat bud keep it up braaap!",
                     },                    
                     new ContactUs
                     {
+                        Posted = new DateTime(8/3/2019),
                         ContactName = "Sam Hunt",
                         ContactEmail = "Shuntayy@ymail.com",
                         ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
-                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "content of a page when looking at its layout. The point of using is that it has a more-or-less" +
                         "normal distribution of letters, as opposed to 'Content here, content here', making it look like readable English.",
                     },                    
                     new ContactUs
                     {
+                        Posted = new DateTime(8/3/2019),
                         ContactName = "Josh Grant",
                         ContactEmail = "JDaddy33@gmail.com",
                         ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
                         "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
-                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                        "normal distribution of letters, as opposed to using 'Content here,  look like readable English.",
                     },                    
                     new ContactUs
                     {
+                        Posted = new DateTime(8/4/2019),
                         ContactName = "Grant Langston",
                         ContactEmail = "Zulluwarrior@gmail.com",
-                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
-                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        ContactMessage = "It is a long a reader will be distracted by the readable " +
+                        "content of a page when looking at its layout. The point of using Lorem that it has a more-or-less" +
                         "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
                     },                    
                     new ContactUs
                     {
+                        Posted = new DateTime(8/5/2019),
                         ContactName = "Ryan Dungey",
                         ContactEmail = "Dungey5@rocketmail.com",
                         ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
@@ -62,22 +67,25 @@ namespace GearShopV2.Models
                     },                    
                     new ContactUs
                     {
+                        Posted = new DateTime(8/5/2019),
                         ContactName = "Marvin Musquin",
                         ContactEmail = "Muskymusq@rocketmail.com",
                         ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
-                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "content of its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
                         "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
                     },                    
                     new ContactUs
                     {
+                        Posted = new DateTime(8/7/2019),
                         ContactName = "Jeremy Mcgrath",
                         ContactEmail = "Showtime1@gmail.com",
                         ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
-                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that " +
                         "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
                     },                   
                     new ContactUs
                     {
+                        Posted = new DateTime(8/7/2019),
                         ContactName = "Trey Canard",
                         ContactEmail = "Treybay41@gmail.com",
                         ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
@@ -86,6 +94,7 @@ namespace GearShopV2.Models
                     },                    
                     new ContactUs
                     {
+                        Posted = new DateTime(8/9/2019),
                         ContactName = "Ezra Lusk",
                         ContactEmail = "Yogilusk@gmail.com",
                         ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
@@ -94,19 +103,21 @@ namespace GearShopV2.Models
                     },                    
                     new ContactUs
                     {
+                        Posted = new DateTime(8/12/2019),
                         ContactName = "Kevin Windham",
                         ContactEmail = "Familyman14@ymail.com",
                         ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
-                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
-                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                        "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a less" +
+                        "normal distribution of , as opposed to using ' here, content here', making it look like readable English.",
                     },                    
                     new ContactUs
                     {
+                        Posted = new DateTime(8/14/2019),
                         ContactName = "Ricky Carmichael",
                         ContactEmail = "Rc4goat@ymail.com",
-                        ContactMessage = "It is a long established fact that a reader will be distracted by the readable " +
+                        ContactMessage = "It is a long established fact will be distracted by the readable " +
                         "content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less" +
-                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                        "normal distribution of letters, as opposed to using 'Content here, content here', making it look like English.",
                     });
 
 
@@ -347,6 +358,54 @@ namespace GearShopV2.Models
                         JQtyOnHand = 13,
                         JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_18_jer_evo_2-nvy_yel.jpg",
                         SizeCat = "Adult",
+                    },                    
+                    new Jersey
+                    {
+                        JBrand = "Fly",
+                        JModel = "F-16",
+                        JColor = "Neon Pink/Hi-Vis",
+                        JSize = "XL",
+                        JPrice = 27.95,
+                        JSalePrice = 27.95,
+                        JQtyOnHand = 7,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_20_jer_f_16-neo_pnk_blk_hi_viz.jpg",
+                        SizeCat = "Adult",
+                    },                   
+                    new Jersey
+                    {
+                        JBrand = "FastHouse",
+                        JModel = "Hawk",
+                        JColor = "Olive",
+                        JSize = "XS",
+                        JPrice = 59.99,
+                        JSalePrice = 59.99,
+                        JQtyOnHand = 17,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fas_20_jer_haw-oli.jpg",
+                        SizeCat = "Adult",
+                    },                    
+                    new Jersey
+                    {
+                        JBrand = "Thor",
+                        JModel = "Pulse Jaws",
+                        JColor = "Mint/Black",
+                        JSize = "M",
+                        JPrice = 34.95,
+                        JSalePrice = 34.95,
+                        JQtyOnHand = 10,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/t/tho_19_jer_pul_jaw-min_blk.jpg",
+                        SizeCat = "Youth",
+                    },                   
+                    new Jersey
+                    {
+                        JBrand = "Fox",
+                        JModel = "180 PRZM SE",
+                        JColor = "Camo",
+                        JSize = "XXL",
+                        JPrice = 39.99,
+                        JSalePrice = 39.99,
+                        JQtyOnHand = 12,
+                        JImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_19_jer_180_przm_se-cam.jpg",
+                        SizeCat = "Youth",
                     },
                     new Jersey
                     {
@@ -393,6 +452,30 @@ namespace GearShopV2.Models
                         PQtyOnHand = 8,
                         PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fly_19_pan_f16-blu_blk_hi_vis.jpg",
                         SizeCat = "Adult",
+                    },                    
+                    new Pant
+                    {
+                        PBrand = "Seven",
+                        PModel = "Rival Trooper 2019",
+                        PColor = "Paste",
+                        PSize = "36",
+                        PPrice = 129.99,
+                        PSalePrice = 129.99,
+                        PQtyOnHand = 8,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/s/sev_19_pan_riv_tro-pas.jpg",
+                        SizeCat = "Adult",
+                    },                    
+                    new Pant
+                    {
+                        PBrand = "Fox",
+                        PModel = "180",
+                        PColor = "Blue",
+                        PSize = "26",
+                        PPrice = 109.95,
+                        PSalePrice = 65.99,
+                        PQtyOnHand = 10,
+                        PImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/f/fox_18_ldy_pan_180-blu.jpg",
+                        SizeCat = "Youth",
                     },
                     new Pant
                     {
@@ -724,6 +807,30 @@ namespace GearShopV2.Models
                     HQtyOnHand = 9,
                     HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/l/lea_17_hel_gpx_5_5_v15-wht_red.jpg",
                     SizeCat = "Adult",
+                },                 
+                new Helmet
+                {
+                    HBrand = "O'Neal",
+                    HModel = "3 Series Rancid",
+                    HColor = "Multi",
+                    HSize = "S",
+                    HPrice = 119.99,
+                    HSalePrice = 83.99,
+                    HQtyOnHand = 13,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/o/one_18_hel_3_ser_ran-mul.jpg",
+                    SizeCat = "Adult",
+                },    
+                new Helmet
+                {
+                    HBrand = "Shoei",
+                    HModel = "VFX-EVO Glaive",
+                    HColor = "Blue",
+                    HSize = "M",
+                    HPrice = 679.00,
+                    HSalePrice = 543.29,
+                    HQtyOnHand = 15,
+                    HImageUrl = "https://images.rockymountainatvmc.com/images/prod/400/s/sho_18_hel_vfx_evo_gla-blu.jpg",
+                    SizeCat = "Youth",
                 },                
                 new Helmet
                 {
