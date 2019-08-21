@@ -12,6 +12,7 @@ namespace GearShopV2.Controllers
 
     public class AdminController : Controller
     {
+       // private readonly RoleManager<ApplicationUser> _roleManager;
         private readonly UserManager<ApplicationUser> _userManager;
         //private readonly SignInManager<ApplicationUser> _signInManager;
 
@@ -38,6 +39,8 @@ namespace GearShopV2.Controllers
         public async Task<IActionResult> AddUser(AddUserViewModel addUserViewModel)
         {
             if (!ModelState.IsValid) return View(addUserViewModel);
+
+
 
             var user = new ApplicationUser()
             {
@@ -99,8 +102,7 @@ namespace GearShopV2.Controllers
                 UserName = user.UserName,
                 Birthdate = user.Birthdate,
                 City = user.City,
-                State = user.State,
-                
+                State = user.State,                
                 UserClaims = claims.Select(c => c.Value)
             .ToList()
             };

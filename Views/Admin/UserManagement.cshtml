@@ -40,7 +40,7 @@ else
                 <td>@user.State</td>
                 <td>@user.Birthdate</td>
                 <td>
-                    @*@user.roles*@
+
 
                     @*<div class="form-check">
                             <label class="form-check-label">
@@ -75,9 +75,18 @@ else
         }
 
 
-
     </table>
 }
+
+@foreach (var claim in User.Claims)
+{
+    <dt>@claim.Type</dt>
+    <dd>@claim.Value</dd>
+}
+
+
+
+
 
 <div>
 

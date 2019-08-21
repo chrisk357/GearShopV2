@@ -16,6 +16,8 @@ namespace GearShopV2.ViewModels
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
+        [Display(Name ="Role")]
+        public string Role { get; set; }
 
         [Required(ErrorMessage = "Please enter the user email")]
         public string Email { get; set; }

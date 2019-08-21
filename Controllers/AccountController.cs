@@ -76,6 +76,8 @@ namespace GearShopV2.Controllers
 
                 if (result.Succeeded)
                 {
+
+
                     return RedirectToAction("Index", "Home");
                 }
             }
