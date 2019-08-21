@@ -94,7 +94,7 @@ namespace GearShopV2.Controllers
             return View();
         }
 
-        /*        [AllowAnonymous]
+        /*       [AllowAnonymous]
                 public IActionResult GoogleLogin(string returnUrl = null)
                 {
                     var redirectUrl = Url.Action("GoogleLoginCallback", "Account", new { ReturnUrl = returnUrl });
