@@ -44,13 +44,30 @@
 
                 <p><a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.JImageUrl)" class="img-thumbnail" alt="ERROR"></a></p>
 
-                <b>Model:</b> @Html.DisplayFor(modelItem => item.JBrand) - @Html.DisplayFor(modelItem => item.JModel) <br>
+                @*<b><em>@Html.DisplayFor(mo</em></b> @Html.DisplayFor(modelItem => item.JBrand) - @Html.DisplayFor(modelItem => item.JModel) <br>
+        <b>Color:</b> @Html.DisplayFor(modelItem => item.JColor) <br>
+        <b>Size:</b> @Html.DisplayFor(modelItem => item.SizeCat) -  @Html.DisplayFor(modelItem => item.JSize) <br>
+        @if (item.JSalePrice < item.JPrice)
+        {
+            <b>Price:</b> @Html.DisplayFor(modelItem => item.JSalePrice)
+            <span class="badge badge-success">ON SALE</span>
+        }
+        else
+        {
+            <b>Price:</b>
+            @Html.DisplayFor(modelItem => item.JPrice) <br />
+        }*@
+
+                <b><em>@Html.DisplayFor(modelItem => item.JBrand)</em></b> <em>@Html.DisplayFor(modelItem => item.JModel)</em> <br>
                 <b>Color:</b> @Html.DisplayFor(modelItem => item.JColor) <br>
                 <b>Size:</b> @Html.DisplayFor(modelItem => item.SizeCat) -  @Html.DisplayFor(modelItem => item.JSize) <br>
                 @if (item.JSalePrice < item.JPrice)
                 {
                     <b>Price:</b> @Html.DisplayFor(modelItem => item.JSalePrice)
-                    <span class="badge badge-success">ON SALE</span>
+                    <div class="">
+                        @* <span class="d-flex justify-content-center badge badge-pill badge-success">SALE PRICE</span><br />
+                <div class="d-inline-block spinner-grow text-success"></div>*@
+                    </div>
                 }
                 else
                 {
@@ -59,7 +76,36 @@
                 }
 
 
-                <i class="fas fa-cart-plus container-fluid" style="color:green; font-size:30px"></i>
+                <div class="align-items-end position-static">
+                    <div class="d-flex justify-content-center align-items-end">
+                        <div class="flex-fill align-content-end">
+                            <button class=" btn btn-success" style="height:100%"><i class="fas fa-cart-plus justify-content-center" style="color:green"></i></button>
+                        </div>
+                        <div class="flex-fill">
+                            <button class=" btn btn-info" style="height:100%"><i class="fa fa-heart justify-content-center" style="color:red"></i></button>
+                        </div>
+                        <div class="flex-fill">
+                            <button class="btn btn-secondary" style="height:100%"><i class="fa fa-share justify-content-center" style="color:black"></i></button>
+
+                        </div>
+                    </div>   <br />
+                </div>
+
+
+                @if (item.JSalePrice < item.JPrice)
+                {<div class="">
+
+                        <span class="d-flex justify-content-center badge badge-pill badge-success">SALE PRICE</span>
+                        @*<div class="d-inline-block spinner-grow text-success"></div>*@
+
+                    </div>
+                }
+
+
+
+
+
+
             </div>
         </div>
         
