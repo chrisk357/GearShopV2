@@ -49,6 +49,29 @@ namespace GearShopV2.Controllers
             return View(gearSizeVM);
         }
 
+        public async Task<IActionResult> JerseyAdmin()
+        {
+            var jerseys = from j in _context.Jersey
+                          select j;
+            var gearSizeVM = new GearSizeViewModel
+            {
+                Jerseys = await jerseys.ToListAsync()
+            };
+            return View(gearSizeVM);
+
+        }
+        public async Task<IActionResult> PantAdmin()
+        {
+            var pants = from p in _context.Pant
+                        select p;
+            var gearSizeVM = new GearSizeViewModel
+            {
+                Pants = await pants.ToListAsync()
+            };
+            return View(gearSizeVM);
+        }
+
+
 
 
 

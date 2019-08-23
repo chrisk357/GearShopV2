@@ -1,0 +1,71 @@
+﻿@model GearShopV2.Models.GearSizeViewModel
+@{
+    ViewData["Title"] = "Jerseys";
+}
+
+<h1 class="myHeaders">Jerseys</h1>
+<!--
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+    -->
+@*<div>
+        <a asp-controller="Home" asp-action="Index"><i class="fas fa-backward"></i></a>
+    </div>*@
+
+
+
+
+
+
+
+
+<div class="card-deck">
+
+
+    @foreach (var item in Model.Jerseys)
+    {
+        <div class="card-deck container col-3 ">
+
+            <div class="card-body cardMerch">
+
+                <p><a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.JImageUrl)" class="img-thumbnail" alt="ERROR"></a></p>
+
+
+
+                <b><em>@Html.DisplayFor(modelItem => item.JBrand)</em></b> <em>@Html.DisplayFor(modelItem => item.JModel)</em> <br>
+                <b>Color:</b> @Html.DisplayFor(modelItem => item.JColor) <br>
+                <b>Size:</b> @Html.DisplayFor(modelItem => item.SizeCat) -  @Html.DisplayFor(modelItem => item.JSize) <br>
+                <b>Qty:</b> @Html.DisplayFor(modelItem => item.JQtyOnHand)  <br />
+                @if (item.JSalePrice < item.JPrice)
+                {
+                    <b>Priced: </b><p class="d-inline" style="color:red">@Html.DisplayFor(modelItem => item.JSalePrice)</p>
+                }
+                else
+                {
+                    <b>Priced:</b> @Html.DisplayFor(modelItem => item.JPrice)
+                }
+
+
+
+                @*<p><a asp-controller="Helmets" asp-action="Details" asp-route-id="@item.Id">details</a></p>*@
+                <button class="btn btn-info"><a asp-controller="Jerseys" asp-action="Edit" asp-route-id="@item.Id" style="color:red">Edit</a></button>
+
+
+
+
+
+
+                @*<div class="">
+                        <button class="d-inline-block btn btn-success justify-content-center" style="width:50px; height:40px"><i class="fas fa-cart-plus justify-content-center" style="color:green"></i></button>
+                    </div>*@
+            </div>
+        </div>
+
+    }
+
+</div>
+
+@*<div>
+        <a asp-controller="Home" asp-action="Index"><i class="fas fa-backward"></i></a>
+    </div>*@
