@@ -6,24 +6,52 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using GearShopV2.Models;
+using GearShopV2.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace GearShopV2.Controllers
 {[Authorize(Roles = "Admin")]
 
     public class AdminController : Controller
     {
+        private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
         //private readonly SignInManager<ApplicationUser> _signInManager;
 
 
-        public AdminController(UserManager<ApplicationUser> userManager)
+        public AdminController(UserManager<ApplicationUser> userManager, ApplicationDbContext context)
         {
             _userManager = userManager;
+            _context = context;
         }
         public IActionResult Index()
         {
             return View();
         }
+
+        public async Task<IActionResult> HelmetAdmin()
+        {
+/*            IQueryable<string> sizeQuery = from h in _context.Helmet
+                                           orderby h.SizeCat
+                                           select h.SizeCat;*/
+
+
+            var helmets = from h in _context.Helmet
+                          select h;
+            
+
+
+                        var gearSizeVM = new GearSizeViewModel
+                        {
+                            Helmets = await helmets.ToListAsync()
+                        };
+
+            return View(gearSizeVM);
+        }
+
+
+
+
         public IActionResult UserManagement()
         {
             var users = _userManager.Users;

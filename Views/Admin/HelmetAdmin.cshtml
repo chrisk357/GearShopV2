@@ -1,0 +1,72 @@
+﻿@model GearShopV2.Models.GearSizeViewModel
+@{
+    ViewData["Title"] = "Helmets";
+}
+
+<h1 class="myHeaders">Closeout Helmets</h1>
+<!--
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+    -->
+
+
+
+@*<div>
+        <a asp-controller="Home" asp-action="Index"><i class="fas fa-backward"></i></a>
+    </div>*@
+
+
+
+
+
+
+
+
+<div class="card-deck">
+
+
+    @foreach (var item in Model.Helmets)
+    {
+        <div class="card-deck container col-3 ">
+
+            <div class="card-body cardMerch">
+
+                <p><a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.HImageUrl)" class="img-thumbnail" alt="ERROR"></a></p>
+
+
+
+                <b><em>@Html.DisplayFor(modelItem => item.HBrand)</em></b> <em>@Html.DisplayFor(modelItem => item.HModel)</em> <br>
+                <b>Color:</b> @Html.DisplayFor(modelItem => item.HColor) <br>
+                <b>Size:</b> @Html.DisplayFor(modelItem => item.SizeCat) -  @Html.DisplayFor(modelItem => item.HSize) <br>
+                <b>Qty:</b> @Html.DisplayFor(modelItem => item.HQtyOnHand)  <br />
+                @if (item.HSalePrice < item.HPrice)
+                {
+                <b>Priced: </b><p class="d-inline" style="color:red">@Html.DisplayFor(modelItem => item.HSalePrice)</p>
+                }
+                else
+                {
+                    <b>Priced:</b> @Html.DisplayFor(modelItem => item.HPrice)
+                }
+
+
+
+
+
+
+
+
+
+                @*<div class="">
+                        <button class="d-inline-block btn btn-success justify-content-center" style="width:50px; height:40px"><i class="fas fa-cart-plus justify-content-center" style="color:green"></i></button>
+                    </div>*@
+            </div>
+        </div>
+
+    }
+
+</div>
+
+@*<div>
+        <a asp-controller="Home" asp-action="Index"><i class="fas fa-backward"></i></a>
+    </div>*@
