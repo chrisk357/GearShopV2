@@ -39,12 +39,12 @@
     </p>
 </form>
 
-<div class="card-deck">
+<div class="card-group">
     @foreach (var item in Model.Helmets)
     {
-        <div class="card-deck container col-3 ">
+        <div class="card-group container col-3 ">
             <div class="card-body cardMerch">
-                <p><a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.HImageUrl)" class="img-thumbnail" alt="ERROR"></a></p>
+                <p><a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.HImageUrl)" class="img-thumbnail img-fluid" alt="ERROR"></a></p>
                
                 <b><em>@Html.DisplayFor(modelItem => item.HBrand)</em></b> <em>@Html.DisplayFor(modelItem => item.HModel)</em> <br>
                 <b>Color:</b> @Html.DisplayFor(modelItem => item.HColor) <br>

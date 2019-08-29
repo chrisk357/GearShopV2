@@ -32,14 +32,15 @@
 
             <div class="card-body cardMerch">
 
-                <p><a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.HImageUrl)" class="img-thumbnail" alt="ERROR"></a></p>
+                <p><a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.HImageUrl)" class="img-thumbnail img-fluid" alt="ERROR"></a></p>
 
 
 
                 <b><em>@Html.DisplayFor(modelItem => item.HBrand)</em></b> <em>@Html.DisplayFor(modelItem => item.HModel)</em> <br>
                 <b>Color:</b> @Html.DisplayFor(modelItem => item.HColor) <br>
                 <b>Size:</b> @Html.DisplayFor(modelItem => item.SizeCat) -  @Html.DisplayFor(modelItem => item.HSize) <br>
-                <b>Qty:</b> @Html.DisplayFor(modelItem => item.HQtyOnHand)  <br />
+                <b>QoH:</b> @Html.DisplayFor(modelItem => item.HQtyOnHand)  <br />
+                <b>Sold:</b> @Html.DisplayFor(modelItem => item.HQtySold) <br />
                 @if (item.HSalePrice < item.HPrice)
                 {
                     <b>Priced: </b><p class="d-inline" style="color:red">@Html.DisplayFor(modelItem => item.HSalePrice)</p>
