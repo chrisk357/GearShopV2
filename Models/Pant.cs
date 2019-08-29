@@ -19,6 +19,7 @@ namespace GearShopV2.Models
         public double PSalePrice { get; set; }
         [Required]
         public int PQtyOnHand { get; set; }
+        public int PQtySold { get; set; }
         [Display(Name = "Image")]
         public string PImageUrl { get; set; }
         [Display(Name = "Category")]

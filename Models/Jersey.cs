@@ -27,6 +27,7 @@ namespace GearShopV2.Models
         public double JSalePrice { get; set; }
         [Required]
         public int JQtyOnHand { get; set; }
+        public int JQtySold { get; set; }
         [Display(Name = "Image")]
         public string JImageUrl { get; set; }
         [Display(Name = "Category")]

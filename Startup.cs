@@ -99,7 +99,7 @@ namespace GearShopV2
             app.UseStaticFiles();
             app.UseCookiePolicy();
             // app.UseSession();
-            app.UseIdentity();
+          //  app.UseIdentity();
             app.UseAuthentication();
 
             app.UseMvc(routes =>

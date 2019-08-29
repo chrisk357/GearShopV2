@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using System;
 
-namespace GearShopV2.Data.Migrations
+namespace GearShopV2.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -40,11 +40,103 @@ namespace GearShopV2.Data.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false)
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    Birthdate = table.Column<DateTime>(nullable: false),
+                    City = table.Column<string>(nullable: true),
+                    State = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ContactUs",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ContactName = table.Column<string>(nullable: false),
+                    ContactEmail = table.Column<string>(nullable: false),
+                    ContactMessage = table.Column<string>(maxLength: 1024, nullable: false),
+                    Posted = table.Column<DateTime>(nullable: false),
+                    ContactUsId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ContactUs", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ContactUs_ContactUs_ContactUsId",
+                        column: x => x.ContactUsId,
+                        principalTable: "ContactUs",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Helmet",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    HBrand = table.Column<string>(nullable: false),
+                    HModel = table.Column<string>(nullable: false),
+                    HColor = table.Column<string>(nullable: true),
+                    HSize = table.Column<string>(nullable: false),
+                    HPrice = table.Column<double>(nullable: false),
+                    HSalePrice = table.Column<double>(nullable: false),
+                    HQtyOnHand = table.Column<int>(nullable: false),
+                    HQtySold = table.Column<int>(nullable: false),
+                    HImageUrl = table.Column<string>(nullable: true),
+                    SizeCat = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Helmet", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Jersey",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    JBrand = table.Column<string>(nullable: false),
+                    JModel = table.Column<string>(nullable: false),
+                    JColor = table.Column<string>(nullable: true),
+                    JSize = table.Column<string>(nullable: false),
+                    JPrice = table.Column<double>(nullable: false),
+                    JSalePrice = table.Column<double>(nullable: false),
+                    JQtyOnHand = table.Column<int>(nullable: false),
+                    JQtySold = table.Column<int>(nullable: false),
+                    JImageUrl = table.Column<string>(nullable: true),
+                    SizeCat = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Jersey", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Pant",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    PBrand = table.Column<string>(nullable: false),
+                    PModel = table.Column<string>(nullable: false),
+                    PColor = table.Column<string>(nullable: true),
+                    PSize = table.Column<string>(nullable: false),
+                    PPrice = table.Column<double>(nullable: false),
+                    PSalePrice = table.Column<double>(nullable: false),
+                    PQtyOnHand = table.Column<int>(nullable: false),
+                    PQtySold = table.Column<int>(nullable: false),
+                    PImageUrl = table.Column<string>(nullable: true),
+                    SizeCat = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pant", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -191,6 +283,11 @@ namespace GearShopV2.Data.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ContactUs_ContactUsId",
+                table: "ContactUs",
+                column: "ContactUsId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -209,6 +306,18 @@ namespace GearShopV2.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "ContactUs");
+
+            migrationBuilder.DropTable(
+                name: "Helmet");
+
+            migrationBuilder.DropTable(
+                name: "Jersey");
+
+            migrationBuilder.DropTable(
+                name: "Pant");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
