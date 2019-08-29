@@ -45,6 +45,7 @@
         <div class="card-deck container col-3 ">
             <div class="card-body cardMerch">
                 <p><a asp-action="Details" asp-route-id="@item.Id"><img src="@Html.DisplayFor(modelItem => item.HImageUrl)" class="img-thumbnail" alt="ERROR"></a></p>
+               
                 <b><em>@Html.DisplayFor(modelItem => item.HBrand)</em></b> <em>@Html.DisplayFor(modelItem => item.HModel)</em> <br>
                 <b>Color:</b> @Html.DisplayFor(modelItem => item.HColor) <br>
                 <b>Size:</b> @Html.DisplayFor(modelItem => item.SizeCat) -  @Html.DisplayFor(modelItem => item.HSize) <br>
@@ -58,25 +59,37 @@
                     <b>Price:</b>
                     @Html.DisplayFor(modelItem => item.HPrice) <br />
                 }
-                <div class="align-items-end position-static">
-                    <div class="d-flex justify-content-center align-items-end">
-                        <div class="flex-fill align-content-end">
-                            <button id="HBuyButton"  class=" btn btn-success" style="height:100%"><i class="fas fa-cart-plus justify-content-center" style="color:green"></i></button>
-                        </div>
-                        <div class="flex-fill">
-                            <button class=" btn btn-info" style="height:100%"><i class="fa fa-heart justify-content-center" style="color:red"></i></button>
-                        </div>
-                        <div class="flex-fill">
-                            <button class="btn btn-secondary" style="height:100%"><i class="fa fa-share justify-content-center" style="color:blue"></i></button>
-                        </div>
-                    </div> 
-                    <br />
+                @*<div class="align-items-end position-static">
+            <div class="d-flex justify-content-center align-items-end">
+                <div class="flex-fill align-content-end">
+                    <button id="HBuyButton"  class=" btn btn-success" style="height:100%"><i class="fas fa-cart-plus justify-content-center" style="color:green"></i></button>
                 </div>
+                <div class="flex-fill">
+                    <button id="HFavButton" class=" btn btn-info" style="height:100%"><i class="fa fa-heart justify-content-center" style="color:red"></i></button>
+                </div>
+                <div class="flex-fill">
+                    <button id="HShareButton" class="btn btn-secondary" style="height:100%"><i class="fa fa-share justify-content-center" style="color:blue"></i></button>
+                </div>
+            </div>
+            <br />
+        </div>*@
+
+
+                    <div class="d-flex justify-content-center align-items-end">
+                            <button id="HBuyButton" class=" btn btn-success btn-group-sm" style="height:100%"><i class="fas fa-cart-plus justify-content-center" style="color:green"></i></button>
+                            <button id="HFavButton" class=" btn btn-info btn-group-sm" style="height:100%"><i class="fa fa-heart justify-content-center" style="color:red"></i></button>
+                            <button id="HShareButton" class="btn btn-secondary btn-group-sm" style="height:100%"><i class="fa fa-share justify-content-center" style="color:blue"></i></button>
+                    </div>
+                    <br />
+
+
+
+
                 @if (item.HSalePrice < item.HPrice)
                 {<div class="">
                         <span class="d-flex justify-content-center badge badge-pill badge-success">SALE PRICE</span>
                         @*<div class="d-inline-block spinner-grow text-success"></div>*@
-                 </div>
+                    </div>
                 }
             </div>
         </div>
