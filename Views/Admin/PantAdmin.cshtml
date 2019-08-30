@@ -36,7 +36,8 @@
                 <b><em>@Html.DisplayFor(modelItem => item.PBrand)</em></b> <em>@Html.DisplayFor(modelItem => item.PModel)</em> <br>
                 <b>Color:</b> @Html.DisplayFor(modelItem => item.PColor) <br>
                 <b>Size:</b> @Html.DisplayFor(modelItem => item.SizeCat) -  @Html.DisplayFor(modelItem => item.PSize) <br>
-                <b>Qty:</b> @Html.DisplayFor(modelItem => item.PQtyOnHand)  <br />
+                <b>QoH:</b> @Html.DisplayFor(modelItem => item.PQtyOnHand)  <br />
+                <b>Sold:</b> @Html.DisplayFor(modelItem => item.PQtySold)
                 @if (item.PSalePrice < item.PPrice)
                 {
                     <b>Priced: </b><p class="d-inline" style="color:red">@Html.DisplayFor(modelItem => item.PSalePrice)</p>

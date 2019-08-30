@@ -109,13 +109,41 @@ namespace GearShopV2
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            CreateUserRoles(serviceProvider).Wait();
+           //CreateUserRoles(serviceProvider).Wait();
         }
 
            private async Task CreateUserRoles(IServiceProvider serviceProvider)
         {
             var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
             var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+
+            /*            string[] roleNames = { "Admin", "User" };
+                        IdentityResult roleResult;
+                        foreach (var roleName in roleNames)
+                        {
+                            var roleExists = await RoleManager.RoleExistsAsync(roleName);
+                            if (!roleExists)
+                            {
+                                roleResult = await RoleManager.CreateAsync(new IdentityRole(roleName));
+                            }
+                        }
+
+                        var _admin = await UserManager.FindByEmailAsync("admin@admin.com");
+                        if (_admin == null)
+                        {
+                            var admin = new ApplicationUser
+                            {
+                                UserName = "admin@admin.com",
+                                Email = "admin@admin.com"
+                            };
+                            var createAdmin = await UserManager.CreateAsync(admin, "P@$$w0rd!");
+                            if (createAdmin.Succeeded)
+                                await UserManager.AddToRoleAsync(admin, "Admin");
+                        }*/
+
+
+
+
 
             IdentityResult roleResult;
             //Adding Admin Role

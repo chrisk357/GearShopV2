@@ -21,6 +21,7 @@ namespace GearShopV2.ViewModels
         public string Email { get; set; }
 
         public List<string> UserClaims { get; set; }
+        public List<string> identityRole { get; set; }
 
         [Required(ErrorMessage = "Please enter the birth date")]
         [Display(Name = "Birth date")]

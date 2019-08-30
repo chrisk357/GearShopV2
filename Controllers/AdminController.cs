@@ -9,8 +9,8 @@ using GearShopV2.Models;
 using GearShopV2.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace GearShopV2.Controllers
-{[Authorize(Roles = "Admin")]
+namespace GearShopV2.Controllers { 
+//{[Authorize(Roles = "Admin")]
 
     public class AdminController : Controller
     {
@@ -60,6 +60,7 @@ namespace GearShopV2.Controllers
             return View(gearSizeVM);
 
         }
+
         public async Task<IActionResult> PantAdmin()
         {
             var pants = from p in _context.Pant
